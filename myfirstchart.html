@@ -22,7 +22,6 @@
           id: 1,
           parent: null,
           title: "लहु"
-          
         }),
 
       {id: 2, parents: [1], title: "खंडु"},
@@ -64,7 +63,9 @@
       ];
 
       options.pageFitMode = primitives.common.PageFitMode.None;
-      //options.pageFitMode = primitives.common.pageFitMode.SelectionOnly;
+
+      //options.pageFitMode = primitives.common.pageFitMode.FitToPage;
+      //options.RenderingMode = primitives.common.RenderingMode.Create;
       options.items = items;
       options.hasSelectorCheckbox = primitives.common.Enabled.False;
       options.maximumColumnsInMatrix = 2;
