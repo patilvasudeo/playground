@@ -25,7 +25,21 @@
     <script type="text/javascript" src="min/primitives.min.js?5100"></script>
     <script type="text/javascript" src="min/primitives.jquery.min.js?5100"></script>
     <link href="min/primitives.latest.css?5100" media="screen" rel="stylesheet" type="text/css" />
+    
+    <style>
+    ::placeholder {
+      color: white;
+      opacity: 1; /* Firefox */
+    }
 
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+     color: white;
+    }
+
+    ::-ms-input-placeholder { /* Microsoft Edge */
+     color: white;
+    }
+    </style>
     <script type='text/javascript'>
       $(document).ready(function () {
         var options = new primitives.famdiagram.Config();
@@ -43,42 +57,22 @@
         {id: 5, parents: [1], title: "निनाबाई", itemTitleColor: primitives.common.Colors.Green},
         {id: 63, parents: [1], title: "निंबाजी"},
         {id: 64, spouses:[63], title: "मंजुळा", itemTitleColor: primitives.common.Colors.DeepPink},
-        {id: 84, parents: [63,64], title: "महेंद्र", itemTitleColor: primitives.common.Colors.Blue},
+        {id: 84, parents: [63,64], title: "महेंद्र", itemTitleColor: primitives.common.Colors.Blue, relativeItem:86, placementType: primitives.common.AdviserPlacementType.Left},
         {id: 85, spouses:84, title: "रेखा", itemTitleColor: primitives.common.Colors.DeepPink},
-        {id: 86, parents: [63,64], title: "भालचंद्र"},
-        {id: 87, parent: null, spouses:86, title: "संगीता ", itemTitleColor: primitives.common.Colors.DeepPink},
+        {id: 86, parents: [63,64], title: "भालचंद्र",relativeItem:88, placementType: primitives.common.AdviserPlacementType.Left},
+        {id: 87, parent: null, spouses:86, title: "संगीता ", itemTitleColor: primitives.common.Colors.DeepPink,relativeItem:86, placementType: primitives.common.AdviserPlacementType.Left},
         {id: 88, parents: [63,64], title: "वासुदेव"},
-        {id: 89, parent: null, spouses:88, title: "नितु", itemTitleColor: primitives.common.Colors.DeepPink},
-        {id: 90, parents: [63,64], title: "शामसुंदर"},
+        {id: 89, parent: null, spouses:88, title: "नितु", itemTitleColor: primitives.common.Colors.DeepPink,relativeItem:88, placementType: primitives.common.AdviserPlacementType.Left},
+        {id: 90, parents: [63,64], title: "शामसुंदर",relativeItem:88, placementType: primitives.common.AdviserPlacementType.Right},
         {id: 122, parents: [84,85], title: "डॉ.कल्पेश"},
         {id: 123, parents: [84,85], title: "अल्पेश"},
         {id: 137, parents: [86,87], title: "वेदांत"},
         {id: 138, parents: [88,89], title: "खुश"}
 
-        /*{id: 2, parents: [1], title: "खंडु"},
-        {id: 3, parents: [1], title: "पिरता"},
-        {id: 4, parents: [1], title: "अंकुश"},
-        {id: 5, parents: [1], title: "निनाबाई", itemTitleColor: primitives.common.Colors.Green},
-        {id: 63, parents: [1], title: "निंबाजी"},
-        {id: 64, spouses:[63], title: "मंजुळा", itemTitleColor: primitives.common.Colors.DeepPink},
-        {id: 84, parents: [63,64], title: "महेंद्र", itemTitleColor: primitives.common.Colors.Blue},
-        {id: 85, spouses:84, title: "रेखा", itemTitleColor: primitives.common.Colors.DeepPink},
-        {id: 86, parents: [63,64], title: "भालचंद्र"},
-        {id: 87, parent: null, spouses:86, title: "संगीता ", itemTitleColor: primitives.common.Colors.DeepPink},
-        {id: 88, parents: [63,64], title: "वासुदेव"},
-        {id: 89, parent: null, spouses:88, title: "नितु", itemTitleColor: primitives.common.Colors.DeepPink},
-        {id: 90, parents: [63,64], title: "शामसुंदर"},
-        {id: 122, parents: [84,85], title: "डॉ.कल्पेश"},
-        {id: 123, parents: [84,85], title: "अल्पेश"},
-        {id: 137, parents: [86,87], title: "वेदांत"},
-        {id: 138, parents: [88,89], title: "खुश"}*/
-
         ];
 
         options.pageFitMode = primitives.common.PageFitMode.None;
 
-        //options.pageFitMode = primitives.common.pageFitMode.FitToPage;
-        //options.RenderingMode = primitives.common.RenderingMode.Create;
         options.items = items;
         options.hasSelectorCheckbox = primitives.common.Enabled.False;
         options.maximumColumnsInMatrix = 2;
@@ -88,8 +82,7 @@
         options.defaultTemplateName = "info";
         options.templates = [getInfoTemplate()];
         options.onItemRender = onTemplateRender;
-        //options.onCursorRender = onTemplateRender; 
-        
+        options.adviserPlacementType = 0; 
         
         jQuery("#basicdiagram").famDiagram(options);
       });
@@ -141,7 +134,7 @@
           result.minimizedItemSize = new primitives.common.Size(3, 3);
 
           var itemTemplate = jQuery(
-            '<div class="bp-item bp-corner-all bt-item-frame" style="text-align:center;">'
+            '<div class="bp-item bp-corner-all bt-item-frame" style="text-align:center;font-style: italic;font-weight: bold;">'
             +'<div name="titleBackground" class="bp-item bp-corner-all bp-title-frame" style="top: 2px; left: 2px; width: 136px; height: 66px; ">'
             + '<div name="title" class="bp-item bp-title" style="top: 10px; left: 1px; width: 126px; height: 18px; padding:9px;">'
             + '</div>'
@@ -245,7 +238,7 @@
       <div class="background-primary padding text-center">
                                                                        
             <p align="right">
-            <input type="text" list="nodenames" name="searchname" style="background-color: transparent; color: #eeeeee;outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: solid #eeeeee 1px; padding: 3px 10px;" />
+            <input type="text" list="nodenames" name="searchname" placeholder="फक्त मराठीतच टाईप करा" style="background-color: transparent; color: #eeeeee;outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: solid #eeeeee 1px; padding: 3px 10px; font-size: 15px;font-weight: bold;" />
 
             <datalist id="nodenames">
                 <option data-value="1" value="लहु">
