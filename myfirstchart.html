@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css" />
   <script type="text/javascript" src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
   <script type="text/javascript" src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
- 
+  
   <script type="text/javascript" src="min/primitives.min.js?5100"></script>
   <script type="text/javascript" src="min/primitives.jquery.min.js?5100"></script>
   <link href="min/primitives.latest.css?5100" media="screen" rel="stylesheet" type="text/css" />
@@ -77,6 +77,7 @@
       options.onItemRender = onTemplateRender;
       //options.onCursorRender = onTemplateRender; 
       
+      
       jQuery("#basicdiagram").famDiagram(options);
     });
 
@@ -123,38 +124,81 @@
         var result = new primitives.orgdiagram.TemplateConfig();
         result.name = "info";
 
-        result.itemSize = new primitives.common.Size(180, 50);
+        result.itemSize = new primitives.common.Size(140, 60);
         result.minimizedItemSize = new primitives.common.Size(3, 3);
 
         var itemTemplate = jQuery(
           '<div class="bp-item bp-corner-all bt-item-frame" style="text-align:center;">'
-          +'<div name="break" style="hight"20px"><BR></div>'
-          +'<div name="titleBackground" class="bp-item bp-corner-all bp-title-frame" style="top: 2px; left: 2px; width: 176px; height: 46px; ">'
-          + '<div name="title" class="bp-item bp-title" style="top: 3px; left: 6px; width: 166px; height: 18px; padding:9px;">'
+          +'<div name="titleBackground" class="bp-item bp-corner-all bp-title-frame" style="top: 2px; left: 2px; width: 136px; height: 66px; ">'
+          + '<div name="title" class="bp-item bp-title" style="top: 10px; left: 1px; width: 126px; height: 18px; padding:9px;">'
           + '</div>'
           + '</div>'
         ).css({
           width: result.itemSize.width + "px",
           height: result.itemSize.height + "px"
+          
         }).addClass("bp-item bp-corner-all bt-item-frame");
 
         result.itemTemplate = itemTemplate.wrap('<div>').parent().html();
 
         return result;
       }
-    
+
+
+   $(document).ready(function() {
+   $('button').click(function() {
+      var itemid;
+      var value = $('input').val();
+ 
+      itemid = $('#nodenames [value="' + value + '"]').data('value');
+      jQuery("#basicdiagram").famDiagram({ cursorItem: itemid });
+      jQuery("#basicdiagram").famDiagram("update", primitives.orgdiagram.UpdateMode.Refresh);
+      });  
+  });
 
 
 
-    
 
   </script>
 </head>
 
 <body>
+
+
+
   <div>
     <div id="basicdiagram" style="width: 100%; height: 480px; border-style: dotted; border-width: 1px;" />
   </div>  
+<div>  
+<input type="text" list="nodenames" name="searchname"/>
+
+<datalist id="nodenames">
+    <option data-value="1" value="लहु">
+    <option data-value="2" value="खंडु">
+    <option data-value="3" value="पिरता">
+    <option data-value="4" value="अंकुश">
+    <option data-value="5" value="निनाबाई">
+    <option data-value="63" value="निंबाजी">
+    <option data-value="64" value="मंजुळा">
+    <option data-value="84" value="महेंद्र">
+    <option data-value="85" value="रेखा">
+    <option data-value="86" value="भालचंद्र">
+    <option data-value="87" value="संगीता">
+    <option data-value="88" value="वासुदेव">
+    <option data-value="89" value="नितु">
+    <option data-value="90" value="शामसुंदर">,
+    <option data-value="122" value="डॉ.कल्पेश">
+    <option data-value="123" value="अल्पेश">
+    <option data-value="137" value="वेदांत">
+    <option data-value="138" value="खुश">
+
+</datalist>
+<button name ="searchnode">शोध सयाजींचा</button>
+
+</div>
+
+     
+
 </body>
 
 </html>
