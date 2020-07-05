@@ -41,62 +41,147 @@
     }
     </style>
     <script type='text/javascript'>
+      var myarray = new Array();
+
+        myarray[0] = "शिक्षण : Msc-Comp, BEd, MEd\nसध्याचा व्यवसाय : नौकरी~वडिल : अशोक विठ्ठल पाटील\nकुळ : वाघ~माहेर : हनुमंतखेडे सीम\nतालुका : एरंडोल, जिल्हा : जळगाव~मामा : राजेंद्र अभिमन्यु पाटील\nगाव :धुळे, ता : धुळे";
+          myarray[1] = "शिक्षण : B.A(english)\nसध्याचा व्यवसाय : गृहिणी~वडिल : गणपतराव तुळशीराम पाटील\nकुळ : बाविस्कर~माहेर : आसोदा\nतालुका : जळगाव, जिल्हा : जळगाव~मामा : अशोक रामराव बोरसे\nगाव :शेवगे, ता : पारोळा";
+          
+
+
       $(document).ready(function () {
         var options = new primitives.famdiagram.Config();
 
         var items = [
-        new primitives.famdiagram.ItemConfig({
+            new primitives.famdiagram.ItemConfig({
             id: 1,
             parent: null,
-            title: "लहु"
-          }),
+            title: "लहु",
+            description :"",
+            itemTitleColor: primitives.common.Colors.Blue,
+            templateName : "contactTemplate"
+            }),
 
-        {id: 2, parents: [1], title: "खंडु"},
-        {id: 3, parents: [1], title: "पिरता"},
-        {id: 4, parents: [1], title: "अंकुश"},
-        {id: 5, parents: [1], title: "निनाबाई", itemTitleColor: primitives.common.Colors.Green},
-        {id: 63, parents: [1], title: "निंबाजी"},
-        {id: 64, spouses:[63], title: "मंजुळा", itemTitleColor: primitives.common.Colors.DeepPink,description: "~वडिल : वेडु पाटील\n\कुळ : हिरे~माहेर : शिंदी दिगर\n\तालुका : भडगांव, जिल्हा : जळगाव~मामा : हरचंद पाटील\n\गाव : पिंप्री, ता. भडगांव"},
-        {id: 84, parents: [63,64], title: "महेंद्र", itemTitleColor: primitives.common.Colors.Blue, relativeItem:86, placementType: primitives.common.AdviserPlacementType.Left},
-        {id: 85, spouses:84, title: "रेखा", itemTitleColor: primitives.common.Colors.DeepPink, description: "शिक्षण : १२वी\n\सध्याचा व्यवसाय : गृहिणी~वडिल : आधार शामराव पाटील\n\कुळ : बोरसे~माहेर : खेडगाव नंदिचे\n\तालुका : पाचोरा, जिल्हा : जळगाव~मामा : आण्णा केशव पाटील\n\गाव : टोळी, ता. पारोळा"},
-        {id: 86, parents: [63,64], title: "भालचंद्र",relativeItem:88, placementType: primitives.common.AdviserPlacementType.Left},
-        {id: 87, parent: null, spouses:86, title: "संगीता ", itemTitleColor: primitives.common.Colors.DeepPink,relativeItem:86, placementType: primitives.common.AdviserPlacementType.Left, description: "शिक्षण : १२वी\n\सध्याचा व्यवसाय : गृहिणी~वडिल : श्रीचंद झिपरु पाटील\n\कुळ : नेरकर~माहेर : रत्नापिंप्री\n\तालुका : पारोळा, जिल्हा : जळगाव~मामा : नवल खुशाल पाटील\n\गाव :बहादरवाडी, ता. अमळनेर"},
-        {id: 88, parents: [63,64], title: "वासुदेव"},
-        {id: 89, parent: null, spouses:88, title: "नितु", itemTitleColor: primitives.common.Colors.DeepPink,relativeItem:88, placementType: primitives.common.AdviserPlacementType.Left,description: "शिक्षण : Msc-Comp, BEd, MEd \n\सध्याचा व्यवसाय : नौकरी~वडिल : अशोक विठ्ठल पाटील\n\कुळ : वाघ~माहेर : हनुमंतखेडे सीम\n\तालुका : एरंडोल, जिल्हा : जळगाव~मामा : राजेंद्र अभिमन्यु पाटील\n\गाव :धुळे, ता. धुळे"},
-        {id: 90, parents: [63,64], title: "शामसुंदर",relativeItem:88, placementType: primitives.common.AdviserPlacementType.Right},
-        {id: 122, parents: [84,85], title: "डॉ.कल्पेश"},
-        {id: 123, parents: [84,85], title: "अल्पेश"},
-        {id: 137, parents: [86,87], title: "वेदांत"},
-        {id: 138, parents: [88,89], title: "खुश"}
+            {id: 2, parents: [1], title: "खंडु",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
+            {id: 3, parents: [1], title: "पिरता",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
+            {id: 4, parents: [1], title: "अंकुश",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
+            {id: 5, parents: [1], title: "निनाबाई",description: "", itemTitleColor: primitives.common.Colors.Green,templateName : "contactTemplate"},
+            {id: 63, parents: [1], title: "निंबाजी",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
+            {id: 64, title: "मंजुळा", itemTitleColor: primitives.common.Colors.DeepPink,description: "~वडिल : वेडु पाटील\nकुळ : हिरे~माहेर : शिंदी दिगर\nतालुका : भडगांव, जिल्हा : जळगाव~मामा : हरचंद पाटील\nगाव : पिंप्री, ता : भडगांव",templateName : "contactTemplate"},
+            {id: 65, parents: [1], title: "श्रीराम",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
+            {id: 66, spouses:[65], title: "विमल", itemTitleColor: primitives.common.Colors.DeepPink,description: "~वडिल : चव्हाण\nकुळ : चव्हाण~माहेर : हिसवहाळ\nतालुका : मालेगाव, जिल्हा : नाशिक~मामा : मामामामामामा\nगाव : मामामामामामा, ता : मामामामामामा", templateName : "contactTemplate"},
 
-        ];
+            {id: 84, parents: [63,64], spouses:[85],title: "महेंद्र", itemTitleColor: primitives.common.Colors.Blue, relativeItem:86, placementType: primitives.common.AdviserPlacementType.Left,description: "",templateName : "contactTemplate"},
+            {id: 85,  title: "रेखा", itemTitleColor: primitives.common.Colors.DeepPink, description: "शिक्षण : १२वी\nसध्याचा व्यवसाय : गृहिणी~वडिल : आधार शामराव पाटील\nकुळ : बोरसे~माहेर : खेडगाव नंदिचे\nतालुका : पाचोरा, जिल्हा : जळगाव~मामा : आण्णा केशव पाटील\nगाव : टोळी, ता : पारोळा",templateName : "contactTemplate"},
+            {id: 86, parents: [63,64], spouses:[87],title: "भालचंद्र",itemTitleColor: primitives.common.Colors.Blue, relativeItem:88, placementType: primitives.common.AdviserPlacementType.Left,description: "",templateName : "contactTemplate"},
+            {id: 87,  title: "संगीता ", itemTitleColor: primitives.common.Colors.DeepPink,relativeItem:86, placementType: primitives.common.AdviserPlacementType.Left, description: "शिक्षण : १२वी\nसध्याचा व्यवसाय : गृहिणी~वडिल : श्रीचंद झिपरु पाटील\nकुळ : नेरकर~माहेर : रत्नापिंप्री\nतालुका : पारोळा, जिल्हा : जळगाव~मामा : नवल खुशाल पाटील\nगाव :बहादरवाडी, ता : अमळनेर",templateName : "contactTemplate"},
+            {id: 88, spouses:[89],parents: [63,64], title: "वासुदेव",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
+            {id: 89,  title: "नितु", itemTitleColor: primitives.common.Colors.DeepPink,relativeItem:88, placementType: primitives.common.AdviserPlacementType.Left,description: myarray[0],templateName : "contactTemplate"},
 
-        options.pageFitMode = primitives.common.PageFitMode.None;
+            {id: 90, parents: [63,64], title: "शामसुंदर",itemTitleColor: primitives.common.Colors.Blue,relativeItem:88, placementType: primitives.common.AdviserPlacementType.Right,description: "",templateName : "contactTemplate"},
+            {id: 122, parents: [84,85], title: "डॉ.कल्पेश",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
+            {id: 123, parents: [84,85], title: "अल्पेश",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
+            {id: 137, parents: [86,87], title: "वेदांत",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
+            {id: 138, parents: [88,89], title: "खुश",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
+            {id: 91, parents: [65, 66], spouses: [92],title: "मनोहर",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
+            {id: 92,  title: "सुषमा", itemTitleColor: primitives.common.Colors.DeepPink, relativeItem: 91, placementType: primitives.common.AdviserPlacementType.Left, description: "शिक्षण : BA, BEd\nसध्याचा व्यवसाय : गृहिणी~वडिल : साहेबराव शंकर शिंदे\nकुळ : शिंदे~माहेर : कुसुंबा\nतालुका : धुळे, जिल्हा : धुळे~मामा : सुदाम पुंडलीक पवार\nगाव : कामखेडा, ता : शिंदखेडा",templateName : "contactTemplate"},
+            {id: 93, parents: [65,66], title: "अलका", spouses:[94],itemTitleColor: primitives.common.Colors.Green,description: "",templateName : "contactTemplate"},
+           {id: 94, title: "रमेश ",relativeItem:93, placementType: primitives.common.AdviserPlacementType.Left, itemTitleColor: primitives.common.Colors.Orange, description: "शिक्षण : BA, BEd\nसध्याचा व्यवसाय : सेवानिवृत्त~वडिल : \nकुळ : ~गाव : लोहारा\nतालुका : पाचोरा, जिल्हा : जळगाव~मामा : -\nगाव :, ता : ",templateName : "contactTemplate"},
+            {id: 95, parents: [65,66], spouses:[96],title: "शशिकांत",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
+            {id: 96,  title: "योगिता", itemTitleColor: primitives.common.Colors.DeepPink,description: "",templateName : "contactTemplate"},
+            {id: 139, parents: [91,92], title: "चैतन्य",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
+            {id: 140, parents: [91,92], title: "धनश्री", itemTitleColor: primitives.common.Colors.Green,description: "",templateName : "contactTemplate"},
+            {id: 141, parents: [95,96], title: "देवयानी", spouses:[142], itemTitleColor: primitives.common.Colors.Green,description: "",templateName : "contactTemplate"},
+            {id: 142, title: "गणेशकुमार", itemTitleColor: primitives.common.Colors.Orange, description: "शिक्षण : यांत्रिक अभियांत्रिकी पदवी\nसध्याचा व्यवसाय : अभियंता~वडिल : राजेंद्र सिताराम पाटील\nकुळ : साळुंके~गाव : नेवाडे\nतालुका : शिंदखेडा, जिल्हा : धुळे~मामा : भास्कर पुंडलिक ठाकरे-\nगाव : मंदाने, ता : शहादा",templateName : "contactTemplate"},
+            {id: 143, parents: [95,96], title: "मंदार",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"}
 
+            ];
+
+        options.pageFitMode = 0;
         options.items = items;
+        options.cursorItem = 0;
+        options.arrowsDirection = primitives.common.GroupByType.Children;
+        options.showExtraArrows = true;
         options.hasSelectorCheckbox = primitives.common.Enabled.False;
-        options.maximumColumnsInMatrix = 2;
-        options.cursorItem = 1;
-        options.normalItemsInterval = 20;
-        options.cousinsIntervalMultiplier = 1;
+        options.linesColor = "blue";
         options.defaultTemplateName = "info";
         options.templates = [getInfoTemplate()];
         options.onItemRender = onTemplateRender;
-        options.adviserPlacementType = 0; 
-
-        options.onCursorChanged = changedetails;
+        
         jQuery("#basicdiagram").famDiagram(options);
       });
 
 
       function changedetails(e, data) {
+            var result = myfunction(data.context.description);
+            }       
+
+
+      function onTemplateRender(event, data) {
+          switch (data.renderingMode) {
+              case primitives.common.RenderingMode.Create:
+                  /* Initialize widgets here */
+                  break;
+              case primitives.common.RenderingMode.Update:
+                  /* Update widgets here */
+                  break;
+          }
+
+          var itemConfig = data.context;
+
+          if (data.templateName == "info") {
+              data.element.find("[name=titleBackground]").css({ "background": itemConfig.itemTitleColor });
+
+              var fields = ["title", "description"];
+              for (var index = 0; index < fields.length; index++) {
+                  var field = fields[index];
+
+                  var element = data.element.find("[name=" + field + "]");
+                  if (element.text() != itemConfig[field]) {
+                      element.text(itemConfig[field]);
+                  }
+              }
+          }
+      }
+
+
+      function getInfoTemplate() {
+            var result = new primitives.orgdiagram.TemplateConfig();
+            result.name = "info";
+
+            result.itemSize = new primitives.common.Size(220, 120);
+            result.minimizedItemSize = new primitives.common.Size(3, 3);
+            result.highlightPadding = new primitives.common.Thickness(2, 2, 2, 2);
+
+
+            var itemTemplate = jQuery(
+              '<div class="bp-item bp-corner-all bt-item-frame">'
+                + '<div name="titleBackground" class="bp-item bp-corner-all bp-title-frame" style="top: 2px; left: 2px; width: 216px; height: 22px;">'
+                    + '<div name="title" class="bp-item bp-title" style="top: 3px; left: 6px; width: 208px; height: 20px;text-align:center;">'
+                    + '</div>'
+                + '</div>'
+                //+ '<div class="bp-item bp-photo-frame" style="top: 26px; left: 2px; width: 50px; height: 60px;">'
+                //    + '<img name="photo" style="height:60px; width:50px;" />'
+                //+ '</div>'
+                + '<div name="description" class="bp-item" style="top: 22px; left: 6px; width: 182px; height: 76px; font-size: 10px;"></div>'
+            + '</div>'
+            ).css({
+                width: result.itemSize.width + "px",
+                height: result.itemSize.height + "px"
+            }).addClass("bp-item bp-corner-all bt-item-frame");
+            result.itemTemplate = itemTemplate.wrap('<div>').parent().html();
+
+            return result;
+        }
+
+      function  myfunction(myparameter){
               document.getElementById("message1").value = ""; 
               document.getElementById("message2").value = ""; 
               document.getElementById("message3").value = ""; 
               document.getElementById("message4").value = ""; 
+              
+              if (myparameter != null ) {
 
-              if (data.context.description != null ) {
-                var messageArr = data.context.description.split('~');
+                var messageArr = myparameter.split('~');
 
                 if (messageArr[0] != null) {
                   document.getElementById("message1").value = messageArr[0];
@@ -113,85 +198,21 @@
                 if (messageArr[3] != null) {
                   document.getElementById("message4").value = messageArr[3];
                 }
-              }
-            }       
-
-
-      function onTemplateRender(event, data) {
-        var hrefElement = data.element.find("[name=readmore]");
-        var emailElement = data.element.find("[name=email]");
-        switch (data.renderingMode) {
-          case primitives.common.RenderingMode.Create:
-            /* Initialize widgets here */
-            hrefElement.click(function (e) {
-              /* Block mouse click propagation in order to avoid layout updates before server postback*/
-              primitives.common.stopPropagation(e);
-            });
-            emailElement.click(function (e) {
-              /* Block mouse click propagation in order to avoid layout updates before server postback*/
-              primitives.common.stopPropagation(e);
-            });
-            break;
-          case primitives.common.RenderingMode.Update:
-            /* Update widgets here */
-            break;
-        }
-
-        var itemConfig = data.context;
-
-        if (data.templateName == "info") {
-          data.element.find("[name=titleBackground]").css({ "background": itemConfig.itemTitleColor });
-
-          var fields = ["title", "description", "phone", "email"];
-          for (var index = 0; index < fields.length; index++) {
-            var field = fields[index];
-
-            var element = data.element.find("[name=" + field + "]");
-            if (element.text() != itemConfig[field]) {
-              element.text(itemConfig[field]);
-            }
-          }
-        }
-      }
-
-
-      function getInfoTemplate() {
-          var result = new primitives.orgdiagram.TemplateConfig();
-          result.name = "info";
-
-          result.itemSize = new primitives.common.Size(140, 60);
-          result.minimizedItemSize = new primitives.common.Size(3, 3);
-
-          var itemTemplate = jQuery(
-            '<div class="bp-item bp-corner-all bt-item-frame" style="text-align:center;font-style: italic;font-weight: bold;">'
-            +'<div name="titleBackground" class="bp-item bp-corner-all bp-title-frame" style="top: 2px; left: 2px; width: 136px; height: 66px; ">'
-            + '<div name="title" class="bp-item bp-title" style="top: 10px; left: 1px; width: 126px; height: 18px; padding:9px;">'
-            + '</div>'
-            + '</div>'
-          ).css({
-            width: result.itemSize.width + "px",
-            height: result.itemSize.height + "px"
-            
-          }).addClass("bp-item bp-corner-all bt-item-frame");
-
-          result.itemTemplate = itemTemplate.wrap('<div>').parent().html();
-
-          return result;
-        }
-
+              }      
+            }     
 
      $(document).ready(function() {
      $('button').click(function() {
-        var result
-        var itemid;
-        var value = $('input').val();
-   
-        itemid = $('#nodenames [value="' + value + '"]').data('value');
+        var result;
+        var itemdetails;
         
-        jQuery("#basicdiagram").famDiagram({ cursorItem: itemid });
+        var value = $('input').val();
+        var myvalue = $('#nodenames [value="' + value + '"]').data('value');
 
+        jQuery("#basicdiagram").famDiagram({ cursorItem: myvalue });
         jQuery("#basicdiagram").famDiagram("update", primitives.orgdiagram.UpdateMode.Refresh);
-        result = changedetails();
+
+        result = myfunction(myarray[0]);
         });  
     });
 
@@ -257,21 +278,18 @@
     <main role="main">    
       <!-- Header -->
       <header class="section-top-padding background-image text-center" style="background-image:url(img/img-05.jpg)">
-        <h1 class="text-extra-thin text-white text-s-size-30 text-m-size-40 text-size-50 text-line-height-1 margin-bottom-40 margin-top-130">
-          सयाजी-पाटिल परीवार वंश वटवृक्ष
+        <h1 class="text-extra-thin text-white text-s-size-30 text-line-height-1 margin-bottom-40 margin-top-30">
+          <B>सयाजी-पाटिल परीवार वंश वटवृक्ष</B>
         </h1>
         <i class="slow icon-sli-arrow-down text-white margin-top-20 text-size-16"></i>
-        <!-- Image 
-        <img class="margin-top-20 center" src="img/app.png" alt="">
-        -->
-        <!-- dark full width arrow object -->
+       <!-- dark full width arrow object -->
         <img class="arrow-object" src="img/arrow-object-dark.svg" alt="">
       </header>
-
+      <div id="basicdiagram" style="width: 100%; height: 480px; border-style: dotted; border-width: 1px;" />
       <div class="background-primary padding text-center">
                                                                        
             <p align="right">
-            <input type="text" list="nodenames" name="searchname" placeholder="फक्त मराठीतच टाईप करा" style="background-color: transparent; color: #eeeeee;outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: solid #eeeeee 1px; padding: 3px 10px; font-size: 15px;font-weight: bold;" />
+            <input type="text" list="nodenames" name="searchname" placeholder="फक्त मराठीतच टाईप करा" style="background-color: transparent; color: #eeeeee;outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: solid #eeeeee 1px; padding: 1px 1px; font-size: 15px;font-weight: bold;" />
 
             <datalist id="nodenames">
                 <option data-value="1" value="लहु">
@@ -292,6 +310,7 @@
                 <option data-value="123" value="अल्पेश">
                 <option data-value="137" value="वेदांत">
                 <option data-value="138" value="खुश">
+                <option data-value="92" value="सुषमा">
 
             </datalist>
             <button name ="searchnode" style="color:white;
@@ -300,7 +319,6 @@
         <div id="messagebox" style="color:white;
             font-size:15px; background-image:url(img/img-05.jpg); height:90px;width: '100%';border-style: none;">
             <legend>माहितीदर्षक</legend>
-            <!-- <input type="text" name="message" id = "message" placeholder="माहिती" style="background-color: transparent; color: #eeeeee;outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: solid #eeeeee 1px; padding: 3px 10px; font-size: 15px; width: 100%;" /> -->
             <table>
               <tr>
                 <td width=25%>
@@ -308,7 +326,6 @@
                 </td>
                 <td width=25%>
                   <textarea id = "message2" readonly style="background-image:url(img/img-05.jpg); color: #eeeeee;outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: solid #eeeeee 1px; font-size: 13px; width: 100%; overflow: hidden; resize: none;height: 44px;padding-left: 5px;"></textarea>
-
                 </td>
                 <td width=25%>
                    <textarea id = "message3" readonly style="background-image:url(img/img-05.jpg); color: #eeeeee;outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: solid #eeeeee 1px; font-size: 13px; width: 100%; overflow: hidden; resize: none;height: 44px;padding-left: 5px;"></textarea>
@@ -318,136 +335,11 @@
                 </td>      
               </tr>
             </table>
-            
           </div>
-
-        <div>
-          <div id="basicdiagram" style="width: 100%; height: 480px; border-style: dotted; border-width: 1px;" />
-        </div> 
-
-
-
-      
-      <!-- Section 5 
-      <section class="section-small-padding background-grey">   
-        <div class="margin2x">
-           <div class="m-6 l-1">
-              <img class="margin-bottom" src="img/logo-1.png"/>
-           </div>
-           <div class="m-6 l-1">
-              <img class="margin-bottom" src="img/logo-2.png"/>
-           </div>
-           <div class="m-6 l-1">
-              <img class="margin-bottom" src="img/logo-3.png"/>
-           </div>
-           <div class="m-6 l-1">
-              <img class="margin-bottom" src="img/logo-1.png"/>
-           </div>
-           <div class="m-6 l-1">
-              <img class="margin-bottom" src="img/logo-4.png"/>
-           </div>
-           <div class="m-6 l-1">
-              <img class="margin-bottom" src="img/logo-5.png"/>
-           </div>
-           <div class="m-6 l-1">
-              <img class="margin-bottom" src="img/logo-3.png"/>
-           </div>
-           <div class="m-6 l-1">
-              <img class="margin-bottom" src="img/logo-1.png"/>
-           </div>
-           <div class="m-6 l-1">
-              <img class="margin-bottom" src="img/logo-5.png"/>
-           </div>
-           <div class="m-6 l-1">
-              <img class="margin-bottom" src="img/logo-4.png"/>
-           </div>
-           <div class="m-6 l-1">
-              <img class="margin-bottom" src="img/logo-1.png"/>
-           </div>
-           <div class="m-6 l-1">
-              <img class="margin-bottom" src="img/logo-2.png"/>
-           </div>
-        </div>
-      </section> -->
-      
-      <!-- Section 7 
-      <section class="section-small-padding background-dark text-center">      
-        <div class="line">
-          <h2 class="text-white text-size-50 text-m-size-40 margin-bottom-20">Get <b>Free Version</b></h2>
-          <div class="m-10 l-6 xl-4 center">
-            <div class="margin">
-              <a class="s-12 m-6 margin-s-bottom" href="/">
-                <img class="full-img right" src="img/google-play.svg" alt="">
-              </a>
-              <a class="s-12 m-6" href="/">
-                <img class="full-img" src="img/app-store.svg" alt="">
-              </a>
-            </div>
-          </div>                                                                                               
-        </div>       
-      </section>     -->
-      
+          
     </main>
-    
-    <!-- FOOTER -->
-    <footer>
-      <!-- Social -->
-      <div class="background-primary padding text-center">
-        <a href="/"><i class="icon-facebook_circle text-size-25 text-dark"></i></a> 
-        <a href="/"><i class="icon-twitter_circle text-size-25 text-dark"></i></a>
-        <a href="/"><i class="icon-google_plus_circle text-size-25 text-dark"></i></a>
-        <a href="/"><i class="icon-instagram_circle text-size-25 text-dark"></i></a> 
-        <a href="/"><i class="icon-linked_in_circle text-size-25 text-dark"></i></a>                                                                       
-      </div>
-      <!-- Main Footer -->
-      <section class="section background-dark">
-        <div class="line"> 
-          <div class="margin2x">
-            <div class="s-12 m-6 l-3 xl-5">
-               <h4 class="text-white text-strong">Our Mission</h4>
-               <p>
-                 <b class="text-size-20">Veri fastidii consectetuer</b> ius in, eum alii dicunt omnium eu. Wisi nostrud equidem ut usu. <b class="text-size-20">Deleniti pertinacia eu est</b>, te his soluta quaestio pericula.
-               </p>
-            </div>
-            <div class="s-12 m-6 l-3 xl-2">
-               <h4 class="text-white text-strong margin-m-top-30">Useful Links</h4>
-               <a class="text-primary-hover" href="page.html">FAQ</a><br>      
-               <a class="text-primary-hover" href="contact.html">Contact Us</a><br>
-               <a class="text-primary-hover" href="blog.html">Blog</a>
-            </div>
-            <div class="s-12 m-6 l-3 xl-2">
-               <h4 class="text-white text-strong margin-m-top-30">Term of Use</h4>
-               <a class="text-primary-hover" href="page.html">Terms and Conditions</a><br>
-               <a class="text-primary-hover" href="page.html">Refund Policy</a><br>
-               <a class="text-primary-hover" href="page.html">Disclaimer</a>
-            </div>
-            <div class="s-12 m-6 l-3 xl-3">
-               <h4 class="text-white text-strong margin-m-top-30">Contact Us</h4>
-                <p><i class="icon-sli-screen-smartphone text-primary"></i> 0800 4521 800 50</p>
-                <a class="text-primary-hover" href="mailto:contact@sampledomain.com"><i class="icon-sli-mouse text-primary"></i> contact@sampledomain.com</a><br>
-                <a class="text-primary-hover" href="mailto:office@sampledomain.com"><i class="icon-sli-mouse text-primary"></i> office@sampledomain.com</a>
-            </div>
-          </div>  
-        </div>    
-      </section>
-      <div class="background-dark">
-         <div class="line">
-            <hr class="break margin-top-bottom-0" style="border-color: #777;">
-         </div>
-      </div>
-      <!-- Bottom Footer -->
-      <section class="padding-2x background-dark full-width">
-        <div class="line">
-          <div class="s-12 l-6">
-            <p class="text-size-12">Copyright 2019, Vision Design - graphic zoo</p>
-            <p class="text-size-12">All images have been purchased from Bigstock. Do not use the images in your website.</p>
-          </div>
-          <div class="s-12 l-6">
-            <a class="right text-size-12 text-primary-hover" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework">Design and coding<br> by Responsee Team</a>
-          </div>
-        </div>  
-      </section>
-    </footer>
+    <BR><BR><BR>
+
     <script type="text/javascript" src="js/responsee.js"></script>
     <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
     <script type="text/javascript" src="js/template-scripts.js"></script> 
