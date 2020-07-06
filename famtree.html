@@ -24,7 +24,8 @@
     
     <script type="text/javascript" src="min/primitives.min.js?5100"></script>
     <script type="text/javascript" src="min/primitives.jquery.min.js?5100"></script>
-    <link href="min/primitives.latest.css?5100" media="screen" rel="stylesheet" type="text/css" />
+    <link href="min/primitives.latest.css?5100" media="screen" rel="stylesheet" type="text/css"/>
+    <script src="js/xlsx.full.min.js"></script>
     
     <style>
     ::placeholder {
@@ -40,18 +41,27 @@
      color: white;
     }
     </style>
+    <script type="text/javascript" src="mynodes.json"></script>
     <script type='text/javascript'>
       var myarray = new Array();
 
         myarray[0] = "शिक्षण : Msc-Comp, BEd, MEd\nसध्याचा व्यवसाय : नौकरी~वडिल : अशोक विठ्ठल पाटील\nकुळ : वाघ~माहेर : हनुमंतखेडे सीम\nतालुका : एरंडोल, जिल्हा : जळगाव~मामा : राजेंद्र अभिमन्यु पाटील\nगाव :धुळे, ता : धुळे";
           myarray[1] = "शिक्षण : B.A(english)\nसध्याचा व्यवसाय : गृहिणी~वडिल : गणपतराव तुळशीराम पाटील\nकुळ : बाविस्कर~माहेर : आसोदा\nतालुका : जळगाव, जिल्हा : जळगाव~मामा : अशोक रामराव बोरसे\nगाव :शेवगे, ता : पारोळा";
           
-
-
       $(document).ready(function () {
         var options = new primitives.famdiagram.Config();
+//alert("hi");
+        //var items = require('./nodes.json');
+        var locaarr = xls2json();
+        //alert(locaarr.length);
+        var items = mynodes;
 
-        var items = [
+        //alert (items.length);
+        //alert(items[items.length-1].title);
+        //alert (myarray.length);
+        
+
+/*        var items = [
             new primitives.famdiagram.ItemConfig({
             id: 1,
             parent: null,
@@ -95,7 +105,7 @@
             {id: 143, parents: [95,96], title: "मंदार",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"}
 
             ];
-
+*/
         options.pageFitMode = 0;
         options.items = items;
         options.cursorItem = 0;
@@ -117,6 +127,62 @@
 
 
       function onTemplateRender(event, data) {
+        var hrefElement = data.element.find("[name=map]");
+        //var emailElement = data.element.find("[name=email]");
+        switch (data.renderingMode) {
+          case primitives.common.RenderingMode.Create:
+            /* Initialize widgets here */
+            hrefElement.click(function (e) {
+              /* Block mouse click propagation in order to avoid layout updates before server postback*/
+              primitives.common.stopPropagation(e);
+            });
+            //emailElement.click(function (e) {
+            //  /* Block mouse click propagation in order to avoid layout updates before server postback*/
+            //  primitives.common.stopPropagation(e);
+            //});
+            break;
+          case primitives.common.RenderingMode.Update:
+            /* Update widgets here */
+            break;
+        }
+
+        var itemConfig = data.context;
+
+        if (data.templateName == "info") {
+          data.element.find("[name=titleBackground]").css({ "background": itemConfig.itemTitleColor });
+
+
+          //data.element.find("[name=photo]").attr({ "src": itemConfig.image });
+          hrefElement.attr({ "href": itemConfig.href });
+          //emailElement.attr({ "href": ("mailto:" + itemConfig.email + "?Subject=Hello%20again") });
+
+
+          //var fields = ["title", "description", "phone", "email"];
+          var fields = ["title", "education", "currentjob", "bday", "mday", "add", "city", "map"];
+          for (var index = 0; index < fields.length; index++) {
+            var field = fields[index];
+
+            var element = data.element.find("[name=" + field + "]");
+            if (element.text() != itemConfig[field]) {
+              element.text(itemConfig[field]);
+            }
+          }
+        }
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+      function oldonTemplateRender(event, data) {
           switch (data.renderingMode) {
               case primitives.common.RenderingMode.Create:
                   /* Initialize widgets here */
@@ -131,7 +197,7 @@
           if (data.templateName == "info") {
               data.element.find("[name=titleBackground]").css({ "background": itemConfig.itemTitleColor });
 
-              var fields = ["title", "description"];
+              var fields = ["title", "education", "currentjob", "bday", "mday", "add", "city"];
               for (var index = 0; index < fields.length; index++) {
                   var field = fields[index];
 
@@ -140,6 +206,8 @@
                       element.text(itemConfig[field]);
                   }
               }
+
+
           }
       }
 
@@ -148,7 +216,7 @@
             var result = new primitives.orgdiagram.TemplateConfig();
             result.name = "info";
 
-            result.itemSize = new primitives.common.Size(220, 120);
+            result.itemSize = new primitives.common.Size(220, 137);
             result.minimizedItemSize = new primitives.common.Size(3, 3);
             result.highlightPadding = new primitives.common.Thickness(2, 2, 2, 2);
 
@@ -159,10 +227,13 @@
                     + '<div name="title" class="bp-item bp-title" style="top: 3px; left: 6px; width: 208px; height: 20px;text-align:center;">'
                     + '</div>'
                 + '</div>'
-                //+ '<div class="bp-item bp-photo-frame" style="top: 26px; left: 2px; width: 50px; height: 60px;">'
-                //    + '<img name="photo" style="height:60px; width:50px;" />'
-                //+ '</div>'
-                + '<div name="description" class="bp-item" style="top: 22px; left: 6px; width: 182px; height: 76px; font-size: 10px;"></div>'
+                + '<div name="education" class="bp-item" style="top: 24px; left: 6px; width: 212px; height: 16px; font-size: 11px;"></div>'
+                + '<div name="currentjob" class="bp-item" style="top: 40px; left: 6px; width: 212px; height: 16px; font-size: 11px;"></div>'
+                + '<div name="bday" class="bp-item" style="top: 56px; left: 6px; width: 212px; height: 16px; font-size: 11px;"></div>'
+                + '<div name="mday" class="bp-item" style="top: 72px; left: 6px; width: 212px; height: 16px; font-size: 11px;"></div>'
+                + '<div name="add" class="bp-item" style="top: 88px; left: 6px; width: 212px; height: 16px; font-size: 11px;"></div>'
+                + '<div name="city" class="bp-item" style="top: 104px; left: 6px; width: 212px; height: 16px; font-size: 11px;"></div>' 
+                + '<a name="map" class="bp-item" style="top: 120px; left: 6px; width: 212px; height: 16px; font-size: 11px; font-weight: bold; text-decoration: none;">Map</a>'
             + '</div>'
             ).css({
                 width: result.itemSize.width + "px",
@@ -200,6 +271,52 @@
                 }
               }      
             }     
+
+
+      function xls2json(){
+        /* set up XMLHttpRequest */
+        var url = "xls/nodes.xlsx";
+        var oReq = new XMLHttpRequest();
+        oReq.open("GET", url, true);
+        oReq.responseType = "arraybuffer";
+        //oReq.onload = function(e) {
+            var arraybuffer = oReq.response;
+
+            /* convert data to binary string */
+            var data = new Uint8Array(arraybuffer);
+            var arr = new Array();
+            for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
+            var bstr = arr.join("");
+
+            /* Call XLSX */
+            var workbook = XLSX.read(bstr, {
+                type: "binary"
+            });
+
+            /* DO SOMETHING WITH workbook HERE */
+            var first_sheet_name = workbook.SheetNames[0];
+            /* Get worksheet */
+            var worksheet = workbook.Sheets[first_sheet_name];
+
+            XLSX.utils.sheet_to_json(worksheet, {
+                raw: true
+            });
+            //console.log(XLSX.utils.sheet_to_json(worksheet, {
+            //    raw: true
+            //}));
+        //}
+
+        oReq.send();
+        return arr;
+
+
+
+
+
+      }      
+
+
+
 
      $(document).ready(function() {
      $('button').click(function() {

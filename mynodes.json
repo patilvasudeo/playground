@@ -1,0 +1,47 @@
+var mynodes = [
+/*            {
+            "id": 1,
+            "parent": null,
+            "title": "लहु",
+            "description" :"",
+            "itemTitleColor" : "Blue",
+            "templateName" : "contactTemplate"
+            },
+            {"id": 2, "parents" : [1], "title" : "खंडु","itemTitleColor" : "Blue","description" : "","templateName" : "contactTemplate"},
+            {"id": 3, "parents" : [1], "title" : "पिरता","itemTitleColor" : "Blue","description" : "","templateName" : "contactTemplate"},
+            {"id": 4, "parents" : [1], "title" : "अंकुश","itemTitleColor" : "Blue","description" : "","templateName" : "contactTemplate"},
+            {"id": 5, "parents" : [1], "title" : "निनाबाई","description" : "", "itemTitleColor" : "Green","templateName" : "contactTemplate"},
+            {"id": 63, "parents" : [1], "title" : "निंबाजी","itemTitleColor" : "Blue","description" : "","templateName" : "contactTemplate"},
+            {"id": 64, "title" : "मंजुळा", "itemTitleColor" : "DeepPink","description" : "~वडिल : वेडु पाटील\nकुळ : हिरे~माहेर : शिंदी दिगर\nतालुका : भडगांव, जिल्हा : जळगाव~मामा : हरचंद पाटील\nगाव : पिंप्री, ता : भडगांव","templateName" : "contactTemplate"},
+            {"id": 65, "parents" : [1], "title" : "श्रीराम","itemTitleColor" : "Blue","description" : "","templateName" : "contactTemplate"},
+            {"id": 66, "spouses" :[65], "title" : "विमल", "itemTitleColor" : "DeepPink","description" : "~वडिल : चव्हाण\nकुळ : चव्हाण~माहेर : हिसवहाळ\nतालुका : मालेगाव, जिल्हा : नाशिक~मामा : मामामामामामा\nगाव : मामामामामामा, ता : मामामामामामा", "templateName" : "contactTemplate"},
+            {"id": 84, "parents" : [63,64], "spouses" :[85],"title" : "महेंद्र", "itemTitleColor" : "Blue", "relativeItem":86, "description" : "","templateName" : "contactTemplate", "placementType": primitives.common.AdviserPlacementType.Left},
+            {"id": 85,  "title" : "रेखा", "itemTitleColor" : "DeepPink", "description" : "शिक्षण : १२वी\nसध्याचा व्यवसाय : गृहिणी~वडिल : आधार शामराव पाटील\nकुळ : बोरसे~माहेर : खेडगाव नंदिचे\nतालुका : पाचोरा, जिल्हा : जळगाव~मामा : आण्णा केशव पाटील\nगाव : टोळी, ता : पारोळा","templateName" : "contactTemplate"},
+            {"id": 86, "parents" : [63,64], "spouses" :[87],"title" : "भालचंद्र","itemTitleColor" : "Blue", "relativeItem":88, "description" : "","templateName" : "contactTemplate", "placementType": primitives.common.AdviserPlacementType.Left},
+            {"id": 87,  "title" : "संगीता ", "itemTitleColor" : "DeepPink","description" : "","templateName" : "contactTemplate", "relativeItem":86,"placementType": primitives.common.AdviserPlacementType.Left},
+*/          
+            {"id": 88, "spouses":[89],"parents": [63,64], "title": "वासुदेव","itemTitleColor": "Blue","relativeItem":90,"education": "शिक्षण : BCS, MBA-IT", "currentjob": "सध्याचा व्यवसाय :  नौकरी", "bday" : "वाढदिवस : ८ ॲागस्ट", "mday" : "लग्नाचा वाढदिवस : २२ जानेवारी", "add" : "सध्याचा निवास : भांडुप (प)", "city" : "मुबंई - ४०० ०७९", "href" : "https://goo.gl/maps/Wa8nrfF9NiXZnWYy5","templateName" : "contactTemplate", "placementType": primitives.common.AdviserPlacementType.Left},
+            {"id": 89, "title": "नितु","itemTitleColor": "DeepPink","education": "शिक्षण : BCS-Comp, Msc-Comp, Bed, Med", "currentjob": "सध्याचा व्यवसाय :  नौकरी", "bday" : "वाढदिवस : १४ फेब्रुवारी", "mday" : "लग्नाचा वाढदिवस : २२ जानेवारी", "add" : "माहेर : हनुमंतखेडे सीम", "city" : "तालुका : एरंडोल, जिल्हा : जळगाव", "href" : "https://goo.gl/maps/nkKULWkYUxLdUy1y7","templateName" : "contactTemplate", "placementType": primitives.common.AdviserPlacementType.Left},
+            {"id": 138, "parents" : [88,89], "title" : "खुश","itemTitleColor" : "Blue","education": "शिक्षण : यांत्रिक अभियांत्रिकी पदवी", "currentjob": "सध्याचा व्यवसाय : शिक्षन", "bday" : "वाढदिवस : ०२ डिसेंबर", "mday" : "", "add" : "सध्याचा निवास : भांडुप (प)", "city" : "मुबंई - ४०० ०७९", "href" : "https://goo.gl/maps/Wa8nrfF9NiXZnWYy5","templateName" : "contactTemplate"},
+
+/*         
+
+   {"id": 89,  "title": "नितु", "itemTitleColor" : "DeepPink","description":"","templateName" : "contactTemplate","relativeItem":88,"placementType": primitives.common.AdviserPlacementType.Left},
+            {"id": 90, "parents" : [63,64], "title" : "शामसुंदर","itemTitleColor" : "Blue", "description" : "","templateName" : "contactTemplate"},
+            {"id": 122, "parents" : [84,85], "title" : "डॉ.कल्पेश","itemTitleColor" : "Blue","description" : "","templateName" : "contactTemplate"},
+            {"id": 123, "parents" : [84,85], "title" : "अल्पेश","itemTitleColor" : "Blue","description" : "","templateName" : "contactTemplate"},
+            {"id": 137, "parents" : [86,87], "title" : "वेदांत","itemTitleColor" : "Blue","description" : "","templateName" : "contactTemplate"},
+            {"id": 91, "parents" : [65, 66], "spouses" : [92],"title" : "मनोहर","itemTitleColor" : "Blue","description" : "","templateName" : "contactTemplate"},
+            {"id": 92,  "title" : "सुषमा", "itemTitleColor" : "DeepPink", "relativeItem": 91, "description" : "शिक्षण : BA, BEd\nसध्याचा व्यवसाय : गृहिणी~वडिल : साहेबराव शंकर शिंदे\nकुळ : शिंदे~माहेर : कुसुंबा\nतालुका : धुळे, जिल्हा : धुळे~मामा : सुदाम पुंडलीक पवार\nगाव : कामखेडा, ता : शिंदखेडा","templateName" : "contactTemplate"},href: "http://www.basicprimitives.com/"
+            {"id": 93, "parents" : [65,66], "title" : "अलका", "spouses" :[94],"itemTitleColor" : "Green","description" : "","templateName" : "contactTemplate"},
+            {"id": 94, "title" : "रमेश ","relativeItem":93,  "itemTitleColor" : "Orange", "description" : "शिक्षण : BA, BEd\nसध्याचा व्यवसाय : सेवानिवृत्त~वडिल : \nकुळ : ~गाव : लोहारा\nतालुका : पाचोरा, जिल्हा : जळगाव~मामा : -\nगाव :, ता : ","templateName" : "contactTemplate"},
+            {"id": 95, "parents" : [65,66], "spouses" :[96],"title" : "शशिकांत","itemTitleColor" : "Blue","description" : "","templateName" : "contactTemplate"},
+            {"id": 96,  "title" : "योगिता", "itemTitleColor" : "DeepPink","description" : "","templateName" : "contactTemplate"},
+            {"id": 139, "parents" : [91,92], "title" : "चैतन्य","itemTitleColor" : "Blue","description" : "","templateName" : "contactTemplate"},
+            {"id": 140, "parents" : [91,92], "title" : "धनश्री", "itemTitleColor" : "Green","description" : "","templateName" : "contactTemplate"},
+            {"id": 141, "parents" : [95,96], "title" : "देवयानी", "spouses" :[142], "itemTitleColor" : "Green","description" : "","templateName" : "contactTemplate"},
+            {"id": 142, "title" : "गणेशकुमार", "itemTitleColor" : "Orange", "description" : "शिक्षण : यांत्रिक अभियांत्रिकी पदवी\nसध्याचा व्यवसाय : अभियंता~वडिल : राजेंद्र सिताराम पाटील\nकुळ : साळुंके~गाव : नेवाडे\nतालुका : शिंदखेडा, जिल्हा : धुळे~मामा : भास्कर पुंडलिक ठाकरे-\nगाव : मंदाने, ता : शहादा","templateName" : "contactTemplate"},
+            {"id": 143, "parents" : [95,96], "title" : "मंदार","itemTitleColor" : "Blue","description" : "","templateName" : "contactTemplate"},
+            {"id": 144, "parents" : [93,94], "title" : "मोनिका","itemTitleColor" : "Green","description" : "","templateName" : "contactTemplate"},
+*/            //{"id": 145, "parents" : [93,94], "title" : "सोनाली","itemTitleColor" : "Green","description" : "","templateName" : "contactTemplate"}
+            ];
