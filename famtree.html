@@ -43,72 +43,30 @@
     </style>
     <script type="text/javascript" src="mynodes.json"></script>
     <script type='text/javascript'>
-      var myarray = new Array();
 
-        myarray[0] = "शिक्षण : Msc-Comp, BEd, MEd\nसध्याचा व्यवसाय : नौकरी~वडिल : अशोक विठ्ठल पाटील\nकुळ : वाघ~माहेर : हनुमंतखेडे सीम\nतालुका : एरंडोल, जिल्हा : जळगाव~मामा : राजेंद्र अभिमन्यु पाटील\nगाव :धुळे, ता : धुळे";
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      var urlid = urlParams.get('id');
+
+
+      var myarray = new Array();
+      var items;
+
+        myarray[0] = "आई : उषा अशोक पाटील~वडिल : अशोक विठ्ठल पाटील~माहेर - कुळ : वाघ, हनुमंतखेडे सीम, ता. एरंडोल, जि. जळगाव~https://goo.gl/maps/68fsQkMsSS8yEQBU7~मामा : राजेंद्र अभिमन्यु पाटील, कुळ : मोरे, धुळे, ता. धुळे~https://goo.gl/maps/c5zmxP1KD2zYcm7B9~मावशी : किरण राजेंद्र पाटील, कुळ : सोनावणे, शिरपुर, जि. धुळे~https://goo.gl/maps/41KmEGkK3ge2k29g7~आत्या : उज्वला दिलीप पाटील, कुळ : जाधव, सुकवत ता. शिंदखेडा, धुळे~https://goo.gl/maps/EA73525yef6MAwE19~भाऊ : सागर अशोक पाटील~https://goo.gl/maps/68fsQkMsSS8yEQBU7~  : दिपाली नितीन पाटील, कुळ : बत्तासे, अर्थे, ता. शिरपुर, जि. धुळे~https://goo.gl/maps/zQFEZsmrFDT6NKLk6";
           myarray[1] = "शिक्षण : B.A(english)\nसध्याचा व्यवसाय : गृहिणी~वडिल : गणपतराव तुळशीराम पाटील\nकुळ : बाविस्कर~माहेर : आसोदा\nतालुका : जळगाव, जिल्हा : जळगाव~मामा : अशोक रामराव बोरसे\nगाव :शेवगे, ता : पारोळा";
           
       $(document).ready(function () {
         var options = new primitives.famdiagram.Config();
-//alert("hi");
-        //var items = require('./nodes.json');
-        //var locaarr = xls2json();
-        //alert(locaarr.length);
-        var items = mynodes;
 
-        //alert (items.length);
-        //alert(items[items.length-1].title);
-        //alert (myarray.length);
+        items = mynodes;
         
-
-/*        var items = [
-            new primitives.famdiagram.ItemConfig({
-            id: 1,
-            parent: null,
-            title: "लहु",
-            description :"",
-            itemTitleColor: primitives.common.Colors.Blue,
-            templateName : "contactTemplate"
-            }),
-
-            {id: 2, parents: [1], title: "खंडु",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
-            {id: 3, parents: [1], title: "पिरता",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
-            {id: 4, parents: [1], title: "अंकुश",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
-            {id: 5, parents: [1], title: "निनाबाई",description: "", itemTitleColor: primitives.common.Colors.Green,templateName : "contactTemplate"},
-            {id: 63, parents: [1], title: "निंबाजी",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
-            {id: 64, title: "मंजुळा", itemTitleColor: primitives.common.Colors.DeepPink,description: "~वडिल : वेडु पाटील\nकुळ : हिरे~माहेर : शिंदी दिगर\nतालुका : भडगांव, जिल्हा : जळगाव~मामा : हरचंद पाटील\nगाव : पिंप्री, ता : भडगांव",templateName : "contactTemplate"},
-            {id: 65, parents: [1], title: "श्रीराम",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
-            {id: 66, spouses:[65], title: "विमल", itemTitleColor: primitives.common.Colors.DeepPink,description: "~वडिल : चव्हाण\nकुळ : चव्हाण~माहेर : हिसवहाळ\nतालुका : मालेगाव, जिल्हा : नाशिक~मामा : मामामामामामा\nगाव : मामामामामामा, ता : मामामामामामा", templateName : "contactTemplate"},
-
-            {id: 84, parents: [63,64], spouses:[85],title: "महेंद्र", itemTitleColor: primitives.common.Colors.Blue, relativeItem:86, placementType: primitives.common.AdviserPlacementType.Left,description: "",templateName : "contactTemplate"},
-            {id: 85,  title: "रेखा", itemTitleColor: primitives.common.Colors.DeepPink, description: "शिक्षण : १२वी\nसध्याचा व्यवसाय : गृहिणी~वडिल : आधार शामराव पाटील\nकुळ : बोरसे~माहेर : खेडगाव नंदिचे\nतालुका : पाचोरा, जिल्हा : जळगाव~मामा : आण्णा केशव पाटील\nगाव : टोळी, ता : पारोळा",templateName : "contactTemplate"},
-            {id: 86, parents: [63,64], spouses:[87],title: "भालचंद्र",itemTitleColor: primitives.common.Colors.Blue, relativeItem:88, placementType: primitives.common.AdviserPlacementType.Left,description: "",templateName : "contactTemplate"},
-            {id: 87,  title: "संगीता ", itemTitleColor: primitives.common.Colors.DeepPink,relativeItem:86, placementType: primitives.common.AdviserPlacementType.Left, description: "शिक्षण : १२वी\nसध्याचा व्यवसाय : गृहिणी~वडिल : श्रीचंद झिपरु पाटील\nकुळ : नेरकर~माहेर : रत्नापिंप्री\nतालुका : पारोळा, जिल्हा : जळगाव~मामा : नवल खुशाल पाटील\nगाव :बहादरवाडी, ता : अमळनेर",templateName : "contactTemplate"},
-            {id: 88, spouses:[89],parents: [63,64], title: "वासुदेव",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
-            {id: 89,  title: "नितु", itemTitleColor: primitives.common.Colors.DeepPink,relativeItem:88, placementType: primitives.common.AdviserPlacementType.Left,description: myarray[0],templateName : "contactTemplate"},
-
-            {id: 90, parents: [63,64], title: "शामसुंदर",itemTitleColor: primitives.common.Colors.Blue,relativeItem:88, placementType: primitives.common.AdviserPlacementType.Right,description: "",templateName : "contactTemplate"},
-            {id: 122, parents: [84,85], title: "डॉ.कल्पेश",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
-            {id: 123, parents: [84,85], title: "अल्पेश",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
-            {id: 137, parents: [86,87], title: "वेदांत",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
-            {id: 138, parents: [88,89], title: "खुश",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
-            {id: 91, parents: [65, 66], spouses: [92],title: "मनोहर",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
-            {id: 92,  title: "सुषमा", itemTitleColor: primitives.common.Colors.DeepPink, relativeItem: 91, placementType: primitives.common.AdviserPlacementType.Left, description: "शिक्षण : BA, BEd\nसध्याचा व्यवसाय : गृहिणी~वडिल : साहेबराव शंकर शिंदे\nकुळ : शिंदे~माहेर : कुसुंबा\nतालुका : धुळे, जिल्हा : धुळे~मामा : सुदाम पुंडलीक पवार\nगाव : कामखेडा, ता : शिंदखेडा",templateName : "contactTemplate"},
-            {id: 93, parents: [65,66], title: "अलका", spouses:[94],itemTitleColor: primitives.common.Colors.Green,description: "",templateName : "contactTemplate"},
-           {id: 94, title: "रमेश ",relativeItem:93, placementType: primitives.common.AdviserPlacementType.Left, itemTitleColor: primitives.common.Colors.Orange, description: "शिक्षण : BA, BEd\nसध्याचा व्यवसाय : सेवानिवृत्त~वडिल : \nकुळ : ~गाव : लोहारा\nतालुका : पाचोरा, जिल्हा : जळगाव~मामा : -\nगाव :, ता : ",templateName : "contactTemplate"},
-            {id: 95, parents: [65,66], spouses:[96],title: "शशिकांत",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
-            {id: 96,  title: "योगिता", itemTitleColor: primitives.common.Colors.DeepPink,description: "",templateName : "contactTemplate"},
-            {id: 139, parents: [91,92], title: "चैतन्य",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"},
-            {id: 140, parents: [91,92], title: "धनश्री", itemTitleColor: primitives.common.Colors.Green,description: "",templateName : "contactTemplate"},
-            {id: 141, parents: [95,96], title: "देवयानी", spouses:[142], itemTitleColor: primitives.common.Colors.Green,description: "",templateName : "contactTemplate"},
-            {id: 142, title: "गणेशकुमार", itemTitleColor: primitives.common.Colors.Orange, description: "शिक्षण : यांत्रिक अभियांत्रिकी पदवी\nसध्याचा व्यवसाय : अभियंता~वडिल : राजेंद्र सिताराम पाटील\nकुळ : साळुंके~गाव : नेवाडे\nतालुका : शिंदखेडा, जिल्हा : धुळे~मामा : भास्कर पुंडलिक ठाकरे-\nगाव : मंदाने, ता : शहादा",templateName : "contactTemplate"},
-            {id: 143, parents: [95,96], title: "मंदार",itemTitleColor: primitives.common.Colors.Blue,description: "",templateName : "contactTemplate"}
-
-            ];
-*/
         options.pageFitMode = 0;
         options.items = items;
-        options.cursorItem = 0;
+        if (urlid == null){
+          urlid = Math.floor(Math.random() * ((items.length - 1) - 40) + 40);
+          //  urlid = items.length - 1;
+        }
+        options.cursorItem = urlid;
         options.arrowsDirection = primitives.common.GroupByType.Children;
         options.showExtraArrows = true;
         options.hasSelectorCheckbox = primitives.common.Enabled.False;
@@ -116,19 +74,22 @@
         options.defaultTemplateName = "info";
         options.templates = [getInfoTemplate()];
         options.onItemRender = onTemplateRender;
+        options.onCursorChanged = changedetails;
         
         jQuery("#basicdiagram").famDiagram(options);
+        var result = myfunction(urlid);
+ 
       });
 
+      //var jumpnode = myfunction(urlid);
 
       function changedetails(e, data) {
-            var result = myfunction(data.context.description);
+            var result = myfunction(data.context.id);
             }       
 
 
       function onTemplateRender(event, data) {
         var hrefElement = data.element.find("[name=map]");
-        //var emailElement = data.element.find("[name=email]");
         switch (data.renderingMode) {
           case primitives.common.RenderingMode.Create:
             /* Initialize widgets here */
@@ -136,10 +97,6 @@
               /* Block mouse click propagation in order to avoid layout updates before server postback*/
               primitives.common.stopPropagation(e);
             });
-            //emailElement.click(function (e) {
-            //  /* Block mouse click propagation in order to avoid layout updates before server postback*/
-            //  primitives.common.stopPropagation(e);
-            //});
             break;
           case primitives.common.RenderingMode.Update:
             /* Update widgets here */
@@ -151,13 +108,7 @@
         if (data.templateName == "info") {
           data.element.find("[name=titleBackground]").css({ "background": itemConfig.itemTitleColor });
 
-
-          //data.element.find("[name=photo]").attr({ "src": itemConfig.image });
           hrefElement.attr({ "href": itemConfig.href });
-          //emailElement.attr({ "href": ("mailto:" + itemConfig.email + "?Subject=Hello%20again") });
-
-
-          //var fields = ["title", "description", "phone", "email"];
           var fields = ["title", "education", "currentjob", "bday", "mday", "add", "city", "map"];
           for (var index = 0; index < fields.length; index++) {
             var field = fields[index];
@@ -169,12 +120,6 @@
           }
         }
       }
-
-
-
-
-
-
 
       function getInfoTemplate() {
             var result = new primitives.orgdiagram.TemplateConfig();
@@ -208,92 +153,175 @@
             return result;
         }
 
-      function  myfunction(myparameter){
-              document.getElementById("message1").value = ""; 
-              document.getElementById("message2").value = ""; 
-              document.getElementById("message3").value = ""; 
-              document.getElementById("message4").value = ""; 
-              document.getElementById("message5").value = "";               
-              if (myparameter != null ) {
+      function  myfunction(mycurrentid){
+        //var mylist = mynodes;
+        
+        var totalnodes = items.length
+        var currentnode;
+            
+        document.getElementById("mom").innerText = ""; 
+        document.getElementById("dad").innerText = ""; 
+        document.getElementById("mahersasar").innerText = ""; 
+        document.getElementById("mamaname").innerText = ""; 
+        document.getElementById("mavshiname").innerText = "";  
+        document.getElementById("atyaname").innerText = ""; 
+        document.getElementById("bhauname").innerText = ""; 
+        document.getElementById("bahinname").innerText = ""; 
+        document.getElementById("maherimg").style.visibility = 'hidden';
+        document.getElementById("mamimg").style.visibility = 'hidden';
+        document.getElementById("mavimg").style.visibility = 'hidden';
+        document.getElementById("atyimg").style.visibility = 'hidden';
+        document.getElementById("bhaimg").style.visibility = 'hidden';
+        document.getElementById("bahimg").style.visibility = 'hidden';
 
-                var messageArr = myparameter.split('~');
-
-                if (messageArr[0] != null) {
-                  document.getElementById("message1").value = messageArr[0];
-                }
-                
-                if (messageArr[1] != null) {
-                  document.getElementById("message2").value = messageArr[1];
-                }
-                
-                if (messageArr[2] != null) {
-                  document.getElementById("message3").value = messageArr[2];
-                }
-                
-                if (messageArr[3] != null) {
-                  document.getElementById("message4").value = messageArr[3];
-                }
-                if (messageArr[4] != null) {
-                  document.getElementById("message5").value = messageArr[4];
-                }
-
-              }      
-            }     
+        var displayresult;
+        for (currentnode = 0; currentnode < totalnodes; currentnode++){
 
 
-      function xls2json(){
-        /* set up XMLHttpRequest */
-        var url = "xls/nodes.xlsx";
-        var oReq = new XMLHttpRequest();
-        oReq.open("GET", url, true);
-        oReq.responseType = "arraybuffer";
-        //oReq.onload = function(e) {
-            var arraybuffer = oReq.response;
-
-            /* convert data to binary string */
-            var data = new Uint8Array(arraybuffer);
-            var arr = new Array();
-            for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
-            var bstr = arr.join("");
-
-            /* Call XLSX */
-            var workbook = XLSX.read(bstr, {
-                type: "binary"
-            });
-
-            /* DO SOMETHING WITH workbook HERE */
-            var first_sheet_name = workbook.SheetNames[0];
-            /* Get worksheet */
-            var worksheet = workbook.Sheets[first_sheet_name];
-
-            XLSX.utils.sheet_to_json(worksheet, {
-                raw: true
-            });
-            //console.log(XLSX.utils.sheet_to_json(worksheet, {
-            //    raw: true
-            //}));
-        //}
-
-        oReq.send();
-        return arr;
+            if (mycurrentid == items[currentnode].id ) {
+              //alert(mycurrentid);
+              //var messageArr = myparameter.split('~');
+              //alert(mylist[mycurrentid].id);
+              //alert(mylist[mycurrentid].title);
+              //alert(mylist[mycurrentid].mom);
+              //alert(mylist[mycurrentid].dad);
+              //alert(mylist[mycurrentid].mama);
 
 
+              //mom
+              if (items[currentnode].mom != "") {   
+                  document.getElementById('mom').innerText = items[currentnode].mom; 
+              }
+              
+              //dad
+              if (items[currentnode].dad != "") {
+                  document.getElementById("dad").innerText = items[currentnode].dad;
+              }
+              
+              //maher
+              if (items[currentnode].mahsaskul != "") {
+                  document.getElementById("mahersasar").innerText = items[currentnode].mahsaskul; 
+                  if (items[currentnode].mahersasar != ""){
+                    document.getElementById("mahersasar").innerText = document.getElementById("mahersasar").innerText + ", " + items[currentnode].mahersasar; 
+
+                    if (items[currentnode].mahsasmap != "") {
+                        document.getElementById("maherimg").style.visibility = 'visible';
+                        document.getElementById("maher").href=items[currentnode].mahsasmap;
+                    }
+                  }
+              } else {
+                  if (items[currentnode].mahersasar != ""){
+                    document.getElementById("mahersasar").innerText = items[currentnode].mahersasar; 
+
+                    if (items[currentnode].mahsasmap != "") {
+                        document.getElementById("maherimg").style.visibility = 'visible';
+                        document.getElementById("maher").href=items[currentnode].mahsasmap;
+                    }
+                  }
+              }
+
+              //mama
+              if (items[currentnode].mama != "") {
+                  document.getElementById("mamaname").innerText = items[currentnode].mama; 
+                  
+                  if (items[currentnode].mamakul != ""){
+                    document.getElementById("mamaname").innerText = document.getElementById("mamaname").innerText + ", " + items[currentnode].mamakul; 
+                  }
+
+                  if (items[currentnode].mamalocation != ""){
+                    document.getElementById("mamaname").innerText = document.getElementById("mamaname").innerText + ", " + items[currentnode].mamalocation; 
+
+                    if (items[currentnode].mamamap != "") {
+                        document.getElementById("mamimg").style.visibility = 'visible';
+                        document.getElementById("mama").href=items[currentnode].mamamap;
+                    }
+                  }
+              }    
+
+              //mavshi
+              if (items[currentnode].mavshi != "") {
+                  document.getElementById("mavshiname").innerText = items[currentnode].mavshi; 
+                  
+                  if (items[currentnode].mavshikul != ""){
+                    document.getElementById("mavshiname").innerText = document.getElementById("mavshiname").innerText + ", " + items[currentnode].mavshikul; 
+                  }
+
+                  if (items[currentnode].mavshilocation != ""){
+                    document.getElementById("mavshiname").innerText = document.getElementById("mavshiname").innerText + ", " + items[currentnode].mavshilocation; 
+
+                    if (items[currentnode].mavshimap != "") {
+                        document.getElementById("mavimg").style.visibility = 'visible';
+                        document.getElementById("mavshi").href=items[currentnode].mavshimap;
+                    }
+                  }
+              }
 
 
+              //atya
+              if (items[currentnode].aatya != "") {
+                  document.getElementById("atyaname").innerText = items[currentnode].aatya; 
+                  
+                  if (items[currentnode].aatyakul != ""){
+                    document.getElementById("atyaname").innerText = document.getElementById("atyaname").innerText + ", " + items[currentnode].aatyakul; 
+                  }
 
-      }      
+                  if (items[currentnode].aatyalocation != ""){
+                    document.getElementById("atyaname").innerText = document.getElementById("atyaname").innerText + ", " + items[currentnode].aatyalocation; 
 
-                //Comparer Function    
-function GetSortOrder(prop) {    
-    return function(a, b) {    
-        if (a[prop] > b[prop]) {    
-            return 1;    
-        } else if (a[prop] < b[prop]) {    
-            return -1;    
+                    if (items[currentnode].aatyamap != "") {
+                        document.getElementById("atyimg").style.visibility = 'visible';
+                        document.getElementById("atya").href=items[currentnode].aatyamap;
+                    }
+                  }
+              }
+
+              //bahin
+              if (items[currentnode].bahin != "") {
+                  document.getElementById("bahinname").innerText = items[currentnode].bahin; 
+                  
+                  if (items[currentnode].bahinkul != ""){
+                    document.getElementById("bahinname").innerText = document.getElementById("bahinname").innerText + ", " + items[currentnode].bahinkul; 
+                  }
+
+                  if (items[currentnode].bahinlocation != ""){
+                    document.getElementById("bahinname").innerText = document.getElementById("bahinname").innerText + ", " + items[currentnode].bahinlocation; 
+
+                    if (items[currentnode].bahinmap != "") {
+                        document.getElementById("bahimg").style.visibility = 'visible';
+                        document.getElementById("bahin").href=items[currentnode].bahinmap;
+                    }
+                  }
+              }
+
+              //bahu
+              if (items[currentnode].bhau != "") {
+                  document.getElementById("bhauname").innerText = items[currentnode].bhau; 
+                  
+                  if (items[currentnode].bhaulocation != ""){
+                    document.getElementById("bhauname").innerText = document.getElementById("bhauname").innerText + ", " + items[currentnode].bhaulocation; 
+
+                    if (items[currentnode].bhaumap != "") {
+                        document.getElementById("bhaimg").style.visibility = 'visible';
+                        document.getElementById("bhau").href=items[currentnode].bhaumap;
+                    }
+                  }
+              }
+
+            }      
+        }
+    }     
+
+        //Comparer Function    
+        function GetSortOrder(prop) {    
+            return function(a, b) {    
+                if (a[prop] > b[prop]) {    
+                    return 1;    
+                } else if (a[prop] < b[prop]) {    
+                    return -1;    
+                }    
+                return 0;    
+            }    
         }    
-        return 0;    
-    }    
-}    
 
 
      $(document).ready(function() {
@@ -307,7 +335,7 @@ function GetSortOrder(prop) {
         jQuery("#basicdiagram").famDiagram({ cursorItem: myvalue });
         jQuery("#basicdiagram").famDiagram("update", primitives.orgdiagram.UpdateMode.Refresh);
 
-        result = myfunction(myarray[0]);
+        result = myfunction(myvalue);
         });  
     });
 
@@ -336,7 +364,7 @@ function GetSortOrder(prop) {
           <div class="top-nav left-menu">
              <ul class="right top-ul chevron">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="">आमच्याबद्दल</a></li>
                 <li><a href="famtree.html">वंशवेल</a></li>
              </ul>
           </div>
@@ -354,15 +382,9 @@ function GetSortOrder(prop) {
           <!-- right menu items -->
           <div class="top-nav right-menu">
              <ul class="top-ul chevron">
-                <li>
-                  <a>Products</a>
-                  <ul>
-                    <li><a>Product 1</a></li>
-                    <li><a>Product 2</a></li>
-                  </ul>
-                </li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="">Gallery</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="search.html">शोध - महिती</a></li>
              </ul> 
           </div>
         </div>
@@ -373,16 +395,11 @@ function GetSortOrder(prop) {
     <main role="main">    
       <!-- Header -->
       <header class="section-top-padding background-image text-center" style="background-image:url(img/img-05.jpg)">
-        <h1 class="text-extra-thin text-white text-s-size-30 text-line-height-1 margin-bottom-40 margin-top-30">
+        <h1 class="text-extra-thin text-white text-s-size-20 text-line-height-1 margin-bottom-2 margin-top-30">
           <B>सयाजी-पाटिल परीवार वंश वटवृक्ष</B>
         </h1>
-        <i class="slow icon-sli-arrow-down text-white margin-top-20 text-size-16"></i>
-       <!-- dark full width arrow object -->
-        <img class="arrow-object" src="img/arrow-object-dark.svg" alt="">
-      </header>
-      <div id="basicdiagram" style="width: 100%; height: 580px; border-style: dotted; border-width: 1px;" />
 
-      <div class="background-primary padding text-center">
+        <div style="height: 30px;">
                                                                              
             <p align="right">
             <input type="text" list="nodenames" name="searchname" placeholder="फक्त मराठीतच टाईप करा" style="background-color: transparent; color: #eeeeee;outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: solid #eeeeee 1px; padding: 1px 1px; font-size: 15px;font-weight: bold;" />
@@ -404,34 +421,66 @@ function GetSortOrder(prop) {
                 my_list.innerHTML = str;
             </script>
             <button name ="searchnode" style="color:white;
-            font-size:15px; border-radius: 12px;background-image:url(img/img-05.jpg);">शोध सयाजींचा</button></p>
+            font-size:15px; border-radius: 12px;background-image:url(img/img-05.jpg);vertical-align: center;">शोध सयाजींचा</button></p>
+         </div>
+
+
+</header>
+      <div> 
+      <div id="basicdiagram" style="width: 100%; height: 450px;"/>
+      
+       
+                 
+ 
+        <div id="messagebox" style="height:75px;width: '100%';">
+            <!-- <legend>माहितीदर्षक</legend> -->
+            <table id ="messagetable" cellpadding="0px" cellspacing="0px" style="background-color: transparent;color: #eeeeee;outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: none;background-image:url(img/img-05.jpg);">
+              <tr style="background-color: transparent;color: #eeeeee;outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: none;background-image:url(img/img-05.jpg);" cellpadding="0px" cellspacing="0px">
+                <td width=25%>
+                    <label id = "mom" style="color:white; font-size:12px;">.</label>
+                    <BR>
+                    <label id = "dad" style="color:white; font-size:12px;">.</label>
+                </td>
+                <td width=25%>
+                    <label id = "mahersasar" style="color:white; font-size:12px;width: 90%; display:inline;"></label>
+                    <a id="maher" target="_blank"> <img id = "maherimg" src="img/map.png" alt="निवास" style="width:12px; height:15px;display:inline; margin-left: 0px;margin-right: 0px;visibility: hidden;"> </a>
+                    
+                    <BR>
+                    <label id = "mamaname" style="color:white; font-size:12px;width: 90%;display:inline;"></label>    
+                    <a id="mama" target="_blank"> <img id = "mamimg" src="img/map.png" alt="निवास" style="width:12px; height:15px;display:inline; margin-left: 0px;margin-right: 0px;visibility: hidden;"> </a>                
+                </td>
+                <td width=25%>
+                    <label id = "mavshiname" style="color:white; font-size:12px;width: 90%;display:inline;"></label>
+                    <a id="mavshi" target="_blank"> <img id = "mavimg" src="img/map.png" alt="निवास" style="width:12px; height:15px;display:inline; margin-left: 0px;margin-right: 0px;visibility: hidden;"> </a>                
+                    <BR>
+                    <label id = "atyaname" style="color:white; font-size:12px;width: 90%;display:inline;"></label>                    
+                    <a id="atya" target="_blank"> <img id = "atyimg" src="img/map.png" alt="निवास" style="width:12px; height:15px;display:inline; margin-left: 0px;margin-right: 0px;visibility: hidden;"> </a>                
+                </td>
+                <td width=25%>
+                    <label id = "bhauname" style="color:white; font-size:12px;width: 90%;display:inline;"></label>
+                    <a id="bhau" target="_blank"> <img id = "bhaimg" src="img/map.png" alt="निवास" style="width:12px; height:15px;display:inline; margin-left: 0px;margin-right: 0px;visibility: hidden;"> </a>                
+                    <BR>
+                    <label id = "bahinname" style="color:white; font-size:12px;width: 90%;display:inline;"></label>                    
+                    <a id="bahin" target="_blank"> <img id = "bahimg" src="img/map.png" alt="निवास" style="width:12px; height:15px;display:inline; margin-left: 0px;margin-right: 0px;visibility: hidden;"> </a>                
+                </td>
+            </tr>
+        </table>
         </div>
-        <div id="messagebox" style="color:white;
-            font-size:15px; background-image:url(img/img-05.jpg); height:90px;width: '100%';border-style: none;">
-            <legend>माहितीदर्षक</legend>
-            <table>
-              <tr>
-                <td width=20%>
-                  <textarea id = "message1" rows="2" readonly style="background-image:url(img/img-05.jpg); color: #eeeeee;outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: solid #eeeeee 1px; font-size: 13px; width: 100%; overflow: hidden; resize: none;height: 44px;padding-left: 5px;"></textarea>
-                </td>
-                <td width=20%>
-                  <textarea id = "message2" readonly style="background-image:url(img/img-05.jpg); color: #eeeeee;outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: solid #eeeeee 1px; font-size: 13px; width: 100%; overflow: hidden; resize: none;height: 44px;padding-left: 5px;"></textarea>
-                </td>
-                <td width=20%>
-                   <textarea id = "message3" readonly style="background-image:url(img/img-05.jpg); color: #eeeeee;outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: solid #eeeeee 1px; font-size: 13px; width: 100%; overflow: hidden; resize: none;height: 44px;padding-left: 5px;"></textarea>
-                </td>
-                <td width=20%>
-                   <textarea id = "message4" readonly style="background-image:url(img/img-05.jpg); color: #eeeeee;outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: solid #eeeeee 1px; font-size: 13px; width: 100%; overflow: hidden; resize: none;height: 44px;padding-left: 5px;"></textarea>
-                </td>      
-                <td width=20%>
-                   <textarea id = "message5" readonly style="background-image:url(img/img-05.jpg); color: #eeeeee;outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: solid #eeeeee 1px; font-size: 13px; width: 100%; overflow: hidden; resize: none;height: 44px;padding-left: 5px;"></textarea>
-                </td>      
-              </tr>
-            </table>
-          </div>
-          
+        <div width="100%" hight="16px" style="text-align: center;color:deeppink;font-weight: bold;">Click <img src = "img/map.png" alt= "नकाशा" style="width:12px; height:15px;display:inline; margin-left: 0px;margin-right: 0px;"/>&nbsp;to get Map</div>
+<!--         <div width="100%" hight="16px">
+       <table width="100%" cellpadding="0px" cellspacing="0px" style="background-color: transparent;color: #eeeeee;outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: none;">
+            <tr style="font-weight: bold;font-size: 15px;">
+                <td style="color:black; width:8%;">Legends</td>
+                <td style="background-color: blue;color:white;width:23%;text-align: center;">आजोबा / वडिल / काका / भाऊ</td>
+                <td style="background-color: deeppink;color:white;width:23%;text-align: center;">आजी / आई / काकु / वहिनी</td>
+                <td style="background-color: green;color:white;width:23%;text-align: center;">आत्या / बहिण</td>
+                <td style="background-color: orange;color:white;width:23%;text-align: center;">दाजी</td>
+            </tr>
+        </table>
+        </div> 
+    -->     </div> 
     </main>
-    <BR><BR><BR>
+
 
     <script type="text/javascript" src="js/responsee.js"></script>
     <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
