@@ -10,25 +10,67 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
+<!-- 		<script type="text/javascript" src="min/primitives.jquery.min.js?5100"></script>
+	    <link href="min/primitives.latest.css?5100" media="screen" rel="stylesheet" type="text/css"/>
+	    <script type="text/javascript" src="info/mynodes.json"></script> -->
+	    <script type='text/javascript'>
+	    	alert("hi");
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			var urlid = urlParams.get('id');
+
+			var items;
+
+			$(document).ready(function () {
+				var options = new primitives.famdiagram.Config();
+
+				items = mynodes;
+
+				options.pageFitMode = 0;
+				options.items = items;
+				if (urlid == null){
+					urlid = Math.floor(Math.random() * ((items.length - 1) - 40) + 40);
+					//  urlid = items.length - 1;
+				}
+				options.cursorItem = urlid;
+				options.arrowsDirection = primitives.common.GroupByType.Children;
+				options.showExtraArrows = true;
+				options.hasSelectorCheckbox = primitives.common.Enabled.False;
+				options.linesColor = "blue";
+				options.defaultTemplateName = "info";
+				options.templates = [getInfoTemplate()];
+				options.onItemRender = onTemplateRender;
+				options.onCursorChanged = changedetails;
+
+				jQuery("#basicdiagram").famDiagram(options);
+				//var result = myfunction(urlid);
+			};
+	    </script>  
 	</head>
 	<body class="is-preload">
 
 		<!-- Content -->
-			<div id="content">
-				<div class="inner">
-
+			<!-- <div id="content"> -->
+				 	
+				<!-- <div class="inner"> -->
+					<div id="basicdiagram" class = "content" style="width: 100%; height: 450px;">
+					hi	
+		hello world
+			
+					</div>
 					<!-- Post -->
-						<article class="box post post-excerpt">
-							<header>
+<!-- 						<article class="box post post-excerpt">
+							<header> -->
 								<!--
 									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
 									if they get too long. You can also remove the <p> entirely if you don't
 									need a subtitle.
 								-->
-								<h2><a href="#">Welcome to Striped</a></h2>
+<!-- 								<h3><a href="#">Welcome to Striped</a></h3>
 								<p>A free, fully responsive HTML5 site template by HTML5 UP</p>
-							</header>
-							<div class="info">
+							</header> -->
+							<!--<div class="info">-->
 								<!--
 									Note: The date should be formatted exactly as it's shown below. In particular, the
 									"least significant" characters of the month should be encapsulated in a <span>
@@ -37,18 +79,18 @@
 									the entire "date" element.
 
 								-->
-								<span class="date"><span class="month">Jul<span>y</span></span> <span class="day">14</span><span class="year">, 2014</span></span>
-								<!--
+<!-- 								<span class="date"><span class="month">Jul<span>y</span></span> <span class="day">14</span><span class="year">, 2014</span></span>
+ -->								<!--
 									Note: You can change the number of list items in "stats" to whatever you want.
 								-->
-								<ul class="stats">
+<!-- 								<ul class="stats">
 									<li><a href="#" class="icon fa-comment">16</a></li>
 									<li><a href="#" class="icon fa-heart">32</a></li>
 									<li><a href="#" class="icon brands fa-twitter">64</a></li>
 									<li><a href="#" class="icon brands fa-facebook-f">128</a></li>
 								</ul>
-							</div>
-							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							</div> -->
+<!-- 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 							<p>
 								<strong>Hello!</strong> You're looking at <strong>Striped</strong>, a fully responsive HTML5 site template designed by <a href="http://twitter.com/ajlkn">AJ</a>
 								for <a href="http://html5up.net">HTML5 UP</a> It features a clean, minimalistic design, styling for all basic page elements (including blockquotes, tables and lists), a
@@ -59,10 +101,10 @@
 								or even commercial ones &ndash; just be sure to credit <a href="http://html5up.net">HTML5 UP</a> for the design. If you like what you see here, be sure to check out
 								<a href="http://html5up.net">HTML5 UP</a> for more cool designs or follow me on <a href="http://twitter.com/ajlkn">Twitter</a> for new releases and updates.
 							</p>
-						</article>
+						</article> -->
 
 					<!-- Post -->
-						<article class="box post post-excerpt">
+<!-- 						<article class="box post post-excerpt">
 							<header>
 								<h2><a href="#">Lorem ipsum dolor sit amet</a></h2>
 								<p>Feugiat interdum sed commodo ipsum consequat dolor nullam metus</p>
@@ -84,11 +126,11 @@
 								Nunc nulla velit, fermentum quis interdum quis, convallis eu sapien. Integer sed ipsum ante.
 							</p>
 						</article>
-
+ -->
 					<!-- Pagination -->
-						<div class="pagination">
+<!-- 						<div class="pagination"> -->
 							<!--<a href="#" class="button previous">Previous Page</a>-->
-							<div class="pages">
+<!-- 							<div class="pages">
 								<a href="#" class="active">1</a>
 								<a href="#">2</a>
 								<a href="#">3</a>
@@ -98,10 +140,10 @@
 							</div>
 							<a href="#" class="button next">Next Page</a>
 						</div>
-
+ 
 				</div>
 			</div>
-
+-->
 		<!-- Sidebar -->
 			<div id="sidebar">
 
