@@ -30,8 +30,25 @@
    <!-- favicons
 	================================================== -->
 	<link rel="icon" type="image/png" href="favicon.png">
+<!--  	
+ -->
+ <style>
 
-<script type="text/javascript" src="primitives.min.js?5100"></script>
+.container {  
+   display: grid;  
+    padding: 0;
+  margin: 1vw;
+  width: 97vw;
+    grid-template-columns: repeat(auto-fit, 1fr);  
+    grid-template-rows: 500px;  
+      border-style: solid;
+  border-color: red;
+ align-items: center;
+}
+
+
+ </style>	
+  <script type="text/javascript" src="primitives.min.js?5100"></script>
   <link href="primitives.latest.css?5100" media="screen" rel="stylesheet" type="text/css" />
 
   <script type='text/javascript'>
@@ -515,9 +532,9 @@
 		<section id="features" >
 
 
-			<div class="row section-intro group animate-this"style="height:680px;">	
+<!--			<div class="row section-intro group animate-this"style="height:680px;">	
  	   		
-<!--	   		<div class="col-twelve with-bottom-line">	<h2 class="">Features You'll Love.</h2>
+	   		<div class="col-twelve with-bottom-line">	<h2 class="">Features You'll Love.</h2>
 
 	   			<p class="lead">Lorem ipsum Tempor do Excepteur nulla aute deserunt reprehenderit aute commodo aliquip laboris velit eu esse exercitation ex fugiat pariatur aute consequat. Lorem ipsum Fugiat mollit quis qui. Lorem ipsum Duis Excepteur Duis magna fugiat incididunt qui id quis dolor nisi irure proident labore ut in incididunt eiusmod est anim.</p> -->
 
@@ -526,13 +543,12 @@
     <input onclick="Update(0)" type="button" value="Scott Aasrud" />
     <input onclick="Update(1)" type="button" value="Ted Lucas" />
     <input onclick="Update(2)" type="button" value="Fritz Stuger" /> 
-    <div id="message"></div>-->
-
     <div id="message"></div>
-    <div id="basicdiagram"
-      style="width: 1000px; height: 400px; top: 160px; border-style: dotted; border-width: 1px;background-color: white; " />
-	</div>   		
-	   	<!-- </div> -->
+    <div >-->
+    	<div id="basicdiagram" class="container"/>
+<!--       style="width: 1000px; height: 400px; top: 160px; border-style: dotted; border-width: 1px;background-color: white; " />
+ 	</div>   		
+-->	   	<!-- </div> -->
 
 
 <!--  			<div class="row features-wrap">				     		
