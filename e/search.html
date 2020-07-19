@@ -1,13 +1,23 @@
-        function myClick() {
+<!DOCTYPE html>
+<html lang="en-US">
+	<head> 
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>शोध - महितीचा</title>
+
+		<script type="text/javascript" src="js/primitives.min.js?5100"></script>
+		<link rel="stylesheet" href="css/main.css" />
+		<script type="text/javascript" src="info/mynodes.json"></script>  
+		<script type="text/javascript">
+		  function clickme(){
 
             var searchtext = (document.getElementById("searchname").value).trim();
-
             var items = mynodes;
             var myresults = new Array();            
             var columnsIn = items[0];
             var searcharray = new Array();
             var searchcount = 0;
             searchtext = searchtext.toUpperCase();
+            
             for(var key in columnsIn){
                 
                 switch (key){
@@ -19,7 +29,6 @@
                        for (var i = 0; i < items.length; ++i) {
                           if (((items[i].title.toUpperCase()).search(searchtext)) != -1) {
                             myresults.push(parseInt(items[i].id,10) + "~");
-                            //myresults.push(items[i].id);
                             searchcount++;
                           } 
                         }
@@ -80,7 +89,6 @@
                        searchcount = 0; 
                        for (var i = 0; i < items.length; ++i) {
                           if (((items[i].mday.toUpperCase()).search(searchtext)) != -1) {
-                            //myresults.push(items[i].id);
                             myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].mday);
                             searchcount++;
                           } 
@@ -441,7 +449,7 @@
                     for (innerarray =innerloop; innerarray  < innerto; innerarray++){
                         resultarray = myresults[innerarray].split("~");
 
-                        resultstring = resultstring + "<a href='famtree.html?id="+ items[resultarray[0]-1].id+"'>" + items[resultarray[0]-1].title + resultarray[1] + "</a><BR>";
+                        resultstring = resultstring + "<a href='vanshvel.html?id="+ items[resultarray[0]-1].id+"'>" + items[resultarray[0]-1].title + resultarray[1] + "</a><BR>";
                     }
                     innerloop= innerto;
                     document.getElementById("div"+parseInt(i,10)).style.visibility = "visible";
@@ -467,3 +475,159 @@
 
              }    
         } 
+
+		</script>		
+
+	</head>
+	<body>
+      <BR>
+		<div id = "displayme" class="boards">
+			<div id = "boardone" class = "board">
+			</div>
+			<div id = "boardone" class = "board" style="text-align: center; font-size:18px;font-weight: bolder;color:blue;">
+				शोध <img src = "img/search.png" alt= "शोध" style="width:18px; height:21px;display:inline; margin-left: 0px;margin-right: 0px;"/> महितीचा 
+			</div>
+			<div id = "boardtwo" class = "board" style="text-align: right;">
+				<input type="text" id="searchname" placeholder="फक्त मराठीतच टाईप करा" style="outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: solid #eeeeee 1px; padding: 1px 1px; font-size: 14px;font-weight: bold;" />
+				<button name ="searchnode" class="mybutton" onclick="clickme()">शोध सयाजींचा</button>				
+			</div>
+		</div>
+		<br><br>
+		<div id = "displayme" class="boards">
+			<div id = "boardone" class = "board">
+			</div>
+			<div id = "boardone" class = "board" style="text-align: center; font-size:24px;font-weight: bolder;color:blue;">
+				शोध परिणाम
+			</div>
+			<div id = "boardtwo" class = "board" style="text-align: right;">
+
+			</div>
+		</div>
+		<BR>
+
+<div id = "resultdiv" style="width: 100%; height: 390px;font-size: 14px; display: none;"> 
+
+
+<button id = "button0" class="accordion">Section 0</button>
+<div class="panel" id = "div0">
+
+</div>
+
+<button id = "button1" class="accordion">Section 1</button>
+<div class="panel" id = "div1">
+
+</div>
+
+<button id = "button2" class="accordion">Section 2</button>
+<div class="panel" id = "div2">
+
+</div>
+<button id = "button3" class="accordion">Section 3</button>
+<div class="panel" id = "div3">
+
+</div>
+<button id = "button4" class="accordion">Section 4</button>
+<div class="panel" id = "div4">
+
+</div>
+<button id = "button5" class="accordion">Section 5</button>
+<div class="panel" id = "div5">
+
+</div>
+<button id = "button6" class="accordion">Section 6</button>
+<div class="panel" id = "div6">
+
+</div>
+<button id = "button7" class="accordion">Section 7</button>
+<div class="panel" id = "div7">
+
+</div>
+<button id = "button8" class="accordion">Section 8</button>
+<div class="panel" id = "div8">
+
+</div>
+<button id = "button9" class="accordion">Section 9</button>
+<div class="panel" id = "div9">
+
+</div>
+<button id = "button10" class="accordion">Section 10</button>
+<div class="panel" id = "div10">
+
+</div>
+<button id = "button11" class="accordion">Section 11</button>
+<div class="panel" id = "div11">
+
+</div>
+<button id = "button12" class="accordion">Section 12</button>
+<div class="panel" id = "div12">
+
+</div>
+<button id = "button13" class="accordion">Section 13</button>
+<div class="panel" id = "div13">
+
+</div>
+<button id = "button14" class="accordion">Section 14</button>
+<div class="panel" id = "div14">
+
+</div>
+<button id = "button15" class="accordion">Section 15</button>
+<div class="panel" id = "div15">
+
+</div>
+<button id = "button16" class="accordion" >Section 16</button>
+<div class="panel" id = "div16">
+
+</div>
+<button id = "button17" class="accordion">Section 17</button>
+<div class="panel" id = "div17">
+
+</div>
+<button id = "button18" class="accordion">Section 18</button>
+<div class="panel" id = "div18">
+
+</div>
+<button id = "button19" class="accordion">Section 19</button>
+<div class="panel" id = "div19">
+
+</div>
+<button id = "button20" class="accordion">Section 20</button>
+<div class="panel" id = "div20">
+
+</div>
+<button id = "button21" class="accordion">Section 21</button>
+<div class="panel" id = "div21">
+
+</div>
+<button id = "button22" class="accordion">Section 22</button>
+<div class="panel" id = "div22">
+
+</div>
+<button id = "button23" class="accordion">Section 23</button>
+<div class="panel" id = "div23">
+
+</div>
+<button id = "button24" class="accordion">Section 24</button>
+<div class="panel" id = "div24">
+
+</div>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+	</body>
+</html>
