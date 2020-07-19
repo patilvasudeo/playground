@@ -2,8 +2,8 @@
 <html lang="en-US">
 	<head> 
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>शोध - महितीचा</title>
-
 		<script type="text/javascript" src="js/primitives.min.js?5100"></script>
 		<link rel="stylesheet" href="css/main.css" />
 		<script type="text/javascript" src="info/mynodes.json"></script>  
@@ -476,6 +476,13 @@
              }    
         } 
 
+			function openNav() {
+				document.getElementById("mySidepanel").style.width = "250px";
+			}
+
+			function closeNav() {
+				document.getElementById("mySidepanel").style.width = "0";
+			}
 		</script>		
 
 	</head>
@@ -483,6 +490,15 @@
       <BR>
 		<div id = "displayme" class="boards">
 			<div id = "boardone" class = "board">
+				<div id="mySidepanel" class="sidepanel">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+					<a href="#home">Home</a>
+					<a href="#">आम्ही कोण</a>
+					<a href="vanshvel.html">वंश वटवृक्ष</a>
+					<a href="search.html">शोध - महितीचा</a>
+					<a href="#">संपर्क</a>
+					</div>
+				<button class="openbtn" onclick="openNav()">☰</button>  
 			</div>
 			<div id = "boardone" class = "board" style="text-align: center; font-size:18px;font-weight: bolder;color:blue;">
 				शोध <img src = "img/search.png" alt= "शोध" style="width:18px; height:21px;display:inline; margin-left: 0px;margin-right: 0px;"/> महितीचा 
@@ -626,7 +642,11 @@ for (i = 0; i < acc.length; i++) {
       panel.style.maxHeight = panel.scrollHeight + "px";
     } 
   });
+
 }
+
+
+
 </script>
 
 	</body>

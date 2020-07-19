@@ -306,6 +306,15 @@
         return result;
     }
 
+
+      function openNav() {
+        document.getElementById("mySidepanel").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidepanel").style.width = "0";
+      }
+
   </script>
 </head>
 
@@ -313,6 +322,16 @@
 
 	<div id = "displayme" class="boards">
 		<div id = "boardone" class = "board">
+          <div id="mySidepanel" class="sidepanel">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+              <a href="#home">Home</a>
+              <a href="#">आम्ही कोण</a>
+              <a href="vanshvel.html">वंश वटवृक्ष</a>
+              <a href="search.html">शोध - महितीचा</a>
+              <a href="#">संपर्क</a>
+          </div>
+        <button class="openbtn" onclick="openNav()">☰</button>  
+
 		</div>
 		<div id = "boardone" class = "board" style="text-align: center;">
 			Google map वर जाण्यासाठी <img src = "img/map.png" alt= "नकाशा" style="width:12px; height:15px;display:inline; margin-left: 0px;margin-right: 0px;"/>&nbsp; वर click करा
