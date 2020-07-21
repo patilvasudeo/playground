@@ -40,19 +40,19 @@
               
               if (mynewDate > today && mynewDate < tomorrow){
                  if ((mynewDate.getDate() == today1.getDate()) && (mynewDate.getMonth() == today1.getMonth())) {
-                    todaystring = todaystring + "<a style='font-size:15px;' href='vanshvel.html?id="+ items[i].id+"'>" + items[i].title + "</a>";
+                    todaystring = todaystring + "<a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;'href='vanshvel.html?id="+ items[i].id+"'>" + items[i].title + "</a><BR>";
                  }
 
                  if ((mynewDate.getDate() == today2.getDate()) && (mynewDate.getMonth() == today2.getMonth())) {
-                    tomorrowstring = tomorrowstring + "<a style='font-size:15px;' href='vanshvel.html?id="+ items[i].id+"'>" + items[i].title + "</a>";
+                    tomorrowstring = tomorrowstring + "<a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i].id+"'>" + items[i].title + "</a><BR>";
                  }
 
                  if ((mynewDate.getDate() == tomorrow.getDate()) && (mynewDate.getMonth() == tomorrow.getMonth())) {
-                    tomrrow1string = tomrrow1string + "<a style='font-size:15px;' href='vanshvel.html?id="+ items[i].id+"'>" + items[i].title + "</a>";
+                    tomrrow1string = tomrrow1string + "<a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i].id+"'>" + items[i].title + "</a><BR>";
                  }
               }
           }
-          document.getElementById("bday").innerHTML = document.getElementById("bday").innerHTML + "<BR>" + todaystring + tomorrowstring + tomrrow1string
+          document.getElementById("bday").innerHTML = document.getElementById("bday").innerHTML + "<BR>" + todaystring + "<BR>" + tomorrowstring + "<BR>" +  tomrrow1string;
           
           todaystring = "आज : ";
           tomorrowstring = "उद्या :";
@@ -67,19 +67,19 @@
               
               if (mynewDate > today && mynewDate < tomorrow){
                  if ((mynewDate.getDate() == today1.getDate()) && (mynewDate.getMonth() == today1.getMonth())) {
-                    todaystring = todaystring + "<a style= 'font-size:15px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i].id+"'>" + (items[i].title).trim() + "  </a>" + "<img src ='img/heart.png' style= 'height:15px;width:15px;display:inline; margin-left: 0px;margin-right: 0px;' alt = ''/> <a style= 'font-size:15px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i+1].id+"'>" + (items[i+1].title).trim() + "</a><br>" ;
+                    todaystring = todaystring + "<a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i].id+"'>" + (items[i].title).trim() + "  </a>" + "<img src ='img/heart.png' style= 'height:15px;width:15px;display:inline; margin-left: 0px;margin-right: 0px;' alt = ''/> <a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i+1].id+"'>" + (items[i+1].title).trim() + "</a><br>" ;
                  }
 
                  if ((mynewDate.getDate() == today2.getDate()) && (mynewDate.getMonth() == today2.getMonth())) {
-                    tomorrowstring = tomorrowstring + "<a style= 'font-size:15px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i].id+"'>" + (items[i].title).trim() + "  </a>" + "<img src ='img/heart.png' style= 'height:15px;width:15px;display:inline; margin-left: 0px;margin-right: 0px;' alt = ''/> <a style= 'font-size:15px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i+1].id+"'>" + (items[i+1].title).trim() + "</a><br>" ;
+                    tomorrowstring = tomorrowstring + "<a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i].id+"'>" + (items[i].title).trim() + "  </a>" + "<img src ='img/heart.png' style= 'height:15px;width:15px;display:inline; margin-left: 0px;margin-right: 0px;' alt = ''/> <a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i+1].id+"'>" + (items[i+1].title).trim() + "</a><br>" ;
                  }
 
                  if ((mynewDate.getDate() == tomorrow.getDate()) && (mynewDate.getMonth() == tomorrow.getMonth())) {
-                    tomrrow1string = tomrrow1string + "<a style= 'font-size:15px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i].id+"'>" + (items[i].title).trim() + "  </a>" + "<img src ='img/heart.png' style= 'height:15px;width:15px;display:inline; margin-left: 0px;margin-right: 0px;' alt = ''/> <a style= 'font-size:15px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i+1].id+"'>" + (items[i+1].title).trim() + "</a><br>" ;
+                    tomrrow1string = tomrrow1string + "<a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i].id+"'>" + (items[i].title).trim() + "  </a>" + "<img src ='img/heart.png' style= 'height:15px;width:15px;display:inline; margin-left: 0px;margin-right: 0px;' alt = ''/> <a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i+1].id+"'>" + (items[i+1].title).trim() + "</a><br>" ;
                  }
               }
           }
-          document.getElementById("mday").innerHTML = document.getElementById("mday").innerHTML + "<BR>" + todaystring + tomorrowstring + tomrrow1string
+          document.getElementById("mday").innerHTML = document.getElementById("mday").innerHTML + "<BR>" + todaystring + "<BR>" + tomorrowstring + "<BR>" +  tomrrow1string;
 
 
       }    
@@ -105,13 +105,13 @@
         <button class="openbtn" onclick="openNav()">☰</button>  
     <BR>
     <BR>
-    <div id = "bday" style="text-align: left; font-size:18px;font-weight: bolder;color:white;">
+    <div id = "bday" style="text-align: left; font-size:15px;font-weight: bolder;color:white;">
         <img src = "img/birthdaycake.png" alt= "वाढदिवस" style="width:38px; height:38px;display:inline; margin-left: 0px;margin-right: 0px;"/> वाढदिवस 
     </div>
 
     <BR>
     <BR>
-    <div id = "mday" style="text-align: left; font-size:18px;font-weight: bolder;color:white;">
+    <div id = "mday" style="text-align: left; font-size:15px;font-weight: bolder;color:white;">
         <img src = "img/rose.png" alt= "शुभमंगल-दिन" style="width:38px; height:38px;display:inline; margin-left: 0px;margin-right: 0px;"/> शुभमंगल-दिन 
     </div>
 </div>
