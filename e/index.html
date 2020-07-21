@@ -3,9 +3,87 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="js/primitives.min.js?5100"></script>
     <link rel="stylesheet" href="css/main.css" />
+    <script type="text/javascript" src="info/mynodes.json"></script>  
+
     <script type="text/javascript">
-          function openNav() {
+      function getbdaymday(){
+          var items = mynodes;
+          var myBDate;
+          var myMonths = ["जानेवारी","फेब्रुवारी","मार्च","एप्रिल","मे", "जून","जुलै", "ऑगस्ट", "सप्टेंबर", "ऑक्टोबर","नोव्हेंबर","डिसेंबर"]; 
+          var myDays =["रविवार","सोमवार","मंगळवार","बुधवार","गुरुवार","शुक्रवार","शनिवार"];
+
+          var todaystring = "आज : ";
+          var tomorrowstring = "उद्या :";
+          var tomrrow1string = "परवा : ";
+
+          const today = new Date();
+          const today1 = new Date();
+          const today2 = new Date(today);
+          const tomorrow = new Date(today);
+
+          today2.setDate(today.getDate()+1);
+          tomorrow.setDate(tomorrow.getDate() + 2);
+          today.setDate(today.getDate() - 1);
+
+          todaystring = todaystring + today1.getDate() + " " + myMonths[today1.getMonth()] + ", "+ myDays[today1.getDay()] +"<BR>";
+          tomorrowstring= tomorrowstring + today2.getDate() + " " + myMonths[today2.getMonth()] + ", "+ myDays[today2.getDay()] +"<BR>";
+          tomrrow1string = tomrrow1string + tomorrow.getDate() + " " + myMonths[tomorrow.getMonth()] + ", "+ myDays[tomorrow.getDay()] +"<BR>"; 
+          var myCurrentMonth = (new Date()).getMonth();
+          var myCurrentYear = (new Date()).getFullYear();
+          var mynewDate;  
+
+          for (var i = 0; i < items.length; ++i) {
+              myBDate = new Date(items[i].birth);
+              mynewDate = new Date("'"+myCurrentYear+'/'+ (myBDate.getMonth()+1) +'/'+myBDate.getDate());
+              
+              if (mynewDate > today && mynewDate < tomorrow){
+                 if ((mynewDate.getDate() == today1.getDate()) && (mynewDate.getMonth() == today1.getMonth())) {
+                    todaystring = todaystring + "<a style='font-size:15px;' href='vanshvel.html?id="+ items[i].id+"'>" + items[i].title + "</a>";
+                 }
+
+                 if ((mynewDate.getDate() == today2.getDate()) && (mynewDate.getMonth() == today2.getMonth())) {
+                    tomorrowstring = tomorrowstring + "<a style='font-size:15px;' href='vanshvel.html?id="+ items[i].id+"'>" + items[i].title + "</a>";
+                 }
+
+                 if ((mynewDate.getDate() == tomorrow.getDate()) && (mynewDate.getMonth() == tomorrow.getMonth())) {
+                    tomrrow1string = tomrrow1string + "<a style='font-size:15px;' href='vanshvel.html?id="+ items[i].id+"'>" + items[i].title + "</a>";
+                 }
+              }
+          }
+          document.getElementById("bday").innerHTML = document.getElementById("bday").innerHTML + "<BR>" + todaystring + tomorrowstring + tomrrow1string
+          
+          todaystring = "आज : ";
+          tomorrowstring = "उद्या :";
+          tomrrow1string = "परवा : ";
+
+          todaystring = todaystring + today1.getDate() + " " + myMonths[today1.getMonth()] + ", "+ myDays[today1.getDay()] +"<BR>";
+          tomorrowstring= tomorrowstring + today2.getDate() + " " + myMonths[today2.getMonth()] + ", "+ myDays[today2.getDay()] +"<BR>";
+          tomrrow1string = tomrrow1string + tomorrow.getDate() + " " + myMonths[tomorrow.getMonth()] + ", "+ myDays[tomorrow.getDay()] +"<BR>"; 
+          for (var i = 0; i < items.length; ++i) {
+              myBDate = new Date(items[i].marriage);
+              mynewDate = new Date("'"+myCurrentYear+'/'+ (myBDate.getMonth()+1) +'/'+myBDate.getDate());
+              
+              if (mynewDate > today && mynewDate < tomorrow){
+                 if ((mynewDate.getDate() == today1.getDate()) && (mynewDate.getMonth() == today1.getMonth())) {
+                    todaystring = todaystring + "<a style= 'font-size:15px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i].id+"'>" + (items[i].title).trim() + "  </a>" + "<img src ='img/heart.png' style= 'height:15px;width:15px;display:inline; margin-left: 0px;margin-right: 0px;' alt = ''/> <a style= 'font-size:15px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i+1].id+"'>" + (items[i+1].title).trim() + "</a><br>" ;
+                 }
+
+                 if ((mynewDate.getDate() == today2.getDate()) && (mynewDate.getMonth() == today2.getMonth())) {
+                    tomorrowstring = tomorrowstring + "<a style= 'font-size:15px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i].id+"'>" + (items[i].title).trim() + "  </a>" + "<img src ='img/heart.png' style= 'height:15px;width:15px;display:inline; margin-left: 0px;margin-right: 0px;' alt = ''/> <a style= 'font-size:15px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i+1].id+"'>" + (items[i+1].title).trim() + "</a><br>" ;
+                 }
+
+                 if ((mynewDate.getDate() == tomorrow.getDate()) && (mynewDate.getMonth() == tomorrow.getMonth())) {
+                    tomrrow1string = tomrrow1string + "<a style= 'font-size:15px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i].id+"'>" + (items[i].title).trim() + "  </a>" + "<img src ='img/heart.png' style= 'height:15px;width:15px;display:inline; margin-left: 0px;margin-right: 0px;' alt = ''/> <a style= 'font-size:15px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i+1].id+"'>" + (items[i+1].title).trim() + "</a><br>" ;
+                 }
+              }
+          }
+          document.getElementById("mday").innerHTML = document.getElementById("mday").innerHTML + "<BR>" + todaystring + tomorrowstring + tomrrow1string
+
+
+      }    
+      function openNav() {
         document.getElementById("mySidepanel").style.width = "250px";
       }
 
@@ -14,7 +92,7 @@
       }
       </script>
 </head>
-<body>
+<body onload="getbdaymday();">
   <div class="sidenav">
     <div id="mySidepanel" class="sidepanel">
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -25,7 +103,6 @@
               <a href="#">संपर्क</a>
           </div>
         <button class="openbtn" onclick="openNav()">☰</button>  
-
     <BR>
     <BR>
     <div id = "bday" style="text-align: left; font-size:18px;font-weight: bolder;color:white;">
