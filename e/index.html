@@ -6,139 +6,325 @@
     <script type="text/javascript" src="js/primitives.min.js?5100"></script>
     <link rel="stylesheet" href="css/main.css" />
     <script type="text/javascript" src="info/mynodes.json"></script>  
+    <script type="text/javascript" src="js/main.js"></script>
 
-    <script type="text/javascript">
-      function getbdaymday(){
-          var items = mynodes;
-          var myBDate;
-          var myMonths = ["जानेवारी","फेब्रुवारी","मार्च","एप्रिल","मे", "जून","जुलै", "ऑगस्ट", "सप्टेंबर", "ऑक्टोबर","नोव्हेंबर","डिसेंबर"]; 
-          var myDays =["रविवार","सोमवार","मंगळवार","बुधवार","गुरुवार","शुक्रवार","शनिवार"];
+    <style type="text/css">
+      .mySlides {display: none;}
+      img {/*vertical-align: middle;*/
+        /*max-width: 30%;
+        max-height: 30%;
+      max-width: 500px;
+      max-height: 500px;*/
+      max-height: 400px;
+      object-fit: fill;}
 
-          var todaystring = "आज : ";
-          var tomorrowstring = "उद्या :";
-          var tomrrow1string = "परवा : ";
+      /* Slideshow container */
+      .slideshow-container {
+        
+        /*width: 100%;
+        position: relative;
+        margin: auto;
+        align-content: center;*/
+        /*vertical-align: middle;*/
 
-          const today = new Date();
-          const today1 = new Date();
-          const today2 = new Date(today);
-          const tomorrow = new Date(today);
-
-          today2.setDate(today.getDate()+1);
-          tomorrow.setDate(tomorrow.getDate() + 2);
-          today.setDate(today.getDate() - 1);
-
-          todaystring = todaystring + today1.getDate() + " " + myMonths[today1.getMonth()] + ", "+ myDays[today1.getDay()] +"<BR>";
-          tomorrowstring= tomorrowstring + today2.getDate() + " " + myMonths[today2.getMonth()] + ", "+ myDays[today2.getDay()] +"<BR>";
-          tomrrow1string = tomrrow1string + tomorrow.getDate() + " " + myMonths[tomorrow.getMonth()] + ", "+ myDays[tomorrow.getDay()] +"<BR>"; 
-          var myCurrentMonth = (new Date()).getMonth();
-          var myCurrentYear = (new Date()).getFullYear();
-          var mynewDate;  
-
-          for (var i = 0; i < items.length; ++i) {
-              myBDate = new Date(items[i].birth);
-              mynewDate = new Date("'"+myCurrentYear+'/'+ (myBDate.getMonth()+1) +'/'+myBDate.getDate());
-              
-              if (mynewDate > today && mynewDate < tomorrow){
-                 if ((mynewDate.getDate() == today1.getDate()) && (mynewDate.getMonth() == today1.getMonth())) {
-                    todaystring = todaystring + "<a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;'href='vanshvel.html?id="+ items[i].id+"'>" + items[i].title + "</a><BR>";
-                 }
-
-                 if ((mynewDate.getDate() == today2.getDate()) && (mynewDate.getMonth() == today2.getMonth())) {
-                    tomorrowstring = tomorrowstring + "<a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i].id+"'>" + items[i].title + "</a><BR>";
-                 }
-
-                 if ((mynewDate.getDate() == tomorrow.getDate()) && (mynewDate.getMonth() == tomorrow.getMonth())) {
-                    tomrrow1string = tomrrow1string + "<a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i].id+"'>" + items[i].title + "</a><BR>";
-                 }
-              }
-          }
-          document.getElementById("bday").innerHTML = document.getElementById("bday").innerHTML + "<BR>" + todaystring + "<BR>" + tomorrowstring + "<BR>" +  tomrrow1string;
-          
-          todaystring = "आज : ";
-          tomorrowstring = "उद्या :";
-          tomrrow1string = "परवा : ";
-
-          todaystring = todaystring + today1.getDate() + " " + myMonths[today1.getMonth()] + ", "+ myDays[today1.getDay()] +"<BR>";
-          tomorrowstring= tomorrowstring + today2.getDate() + " " + myMonths[today2.getMonth()] + ", "+ myDays[today2.getDay()] +"<BR>";
-          tomrrow1string = tomrrow1string + tomorrow.getDate() + " " + myMonths[tomorrow.getMonth()] + ", "+ myDays[tomorrow.getDay()] +"<BR>"; 
-          for (var i = 0; i < items.length; ++i) {
-              myBDate = new Date(items[i].marriage);
-              mynewDate = new Date("'"+myCurrentYear+'/'+ (myBDate.getMonth()+1) +'/'+myBDate.getDate());
-              
-              if (mynewDate > today && mynewDate < tomorrow){
-                 if ((mynewDate.getDate() == today1.getDate()) && (mynewDate.getMonth() == today1.getMonth())) {
-                    todaystring = todaystring + "<a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i].id+"'>" + (items[i].title).trim() + "  </a>" + "<img src ='img/heart.png' style= 'height:15px;width:15px;display:inline; margin-left: 0px;margin-right: 0px;' alt = ''/> <a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i+1].id+"'>" + (items[i+1].title).trim() + "</a><br>" ;
-                 }
-
-                 if ((mynewDate.getDate() == today2.getDate()) && (mynewDate.getMonth() == today2.getMonth())) {
-                    tomorrowstring = tomorrowstring + "<a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i].id+"'>" + (items[i].title).trim() + "  </a>" + "<img src ='img/heart.png' style= 'height:15px;width:15px;display:inline; margin-left: 0px;margin-right: 0px;' alt = ''/> <a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i+1].id+"'>" + (items[i+1].title).trim() + "</a><br>" ;
-                 }
-
-                 if ((mynewDate.getDate() == tomorrow.getDate()) && (mynewDate.getMonth() == tomorrow.getMonth())) {
-                    tomrrow1string = tomrrow1string + "<a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i].id+"'>" + (items[i].title).trim() + "  </a>" + "<img src ='img/heart.png' style= 'height:15px;width:15px;display:inline; margin-left: 0px;margin-right: 0px;' alt = ''/> <a style= 'font-size:11px;display:inline; margin-left: 0px;margin-right: 0px;' href='vanshvel.html?id="+ items[i+1].id+"'>" + (items[i+1].title).trim() + "</a><br>" ;
-                 }
-              }
-          }
-          document.getElementById("mday").innerHTML = document.getElementById("mday").innerHTML + "<BR>" + todaystring + "<BR>" + tomorrowstring + "<BR>" +  tomrrow1string;
-
-
-      }    
-      function openNav() {
-        document.getElementById("mySidepanel").style.width = "250px";
+        text-align: center;
+              display: block;
       }
 
-      function closeNav() {
-        document.getElementById("mySidepanel").style.width = "0";
+      /* Caption text */
+      .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
       }
-      </script>
-</head>
-<body onload="getbdaymday();">
-  <div class="sidenav">
-    <div id="mySidepanel" class="sidepanel">
-              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-              <a href="index.html">Home</a>
-              <a href="#">आम्ही कोण</a>
-              <a href="vanshvel.html">वंश वटवृक्ष</a>
-              <a href="search.html">शोध - महितीचा</a>
-              <a href="#">संपर्क</a>
-          </div>
-        <button class="openbtn" onclick="openNav()">☰</button>  
-    <BR>
-    <BR>
-    <div id = "bday" style="text-align: left; font-size:15px;font-weight: bolder;color:white;">
-        <img src = "img/birthdaycake.png" alt= "वाढदिवस" style="width:38px; height:38px;display:inline; margin-left: 0px;margin-right: 0px;"/> वाढदिवस 
-    </div>
 
-    <BR>
-    <BR>
-    <div id = "mday" style="text-align: left; font-size:15px;font-weight: bolder;color:white;">
-        <img src = "img/rose.png" alt= "शुभमंगल-दिन" style="width:38px; height:38px;display:inline; margin-left: 0px;margin-right: 0px;"/> शुभमंगल-दिन 
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+
+      /* The dots/bullets/indicators */
+      .dot {
+        height: 10px;
+        width: 10px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        /*display: inline-block;*/
+        display: none;
+        transition: background-color 0.6s ease;
+      }
+
+      .active {
+        background-color: #717171;
+      }
+
+      /* Fading animation */
+      .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+      }
+
+      @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+      }
+
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 300px) {
+        .text {font-size: 11px}
+      }
+    </style>
+  </head>
+  <body onload="buildMenu();">
+    <div id = "displayme" class="boards">
+      <div id = "boardone" class = "board">
+        <input type="image" src="img/sayaji.png" alt = "Menu" onclick="openNav()" style="height: 100%;width: 15%;"/>
+        <div id="mySidebar" class="sidebar">
+        </div>
+      </div>
+
+      <div id = "boardtwo" class = "board" style="text-align: center; font-size:18px;font-weight: bolder;color:blue;">
+      </div>
+  
+      <div id = "boardthree" class = "board" style="text-align: right;">
+      </div>
     </div>
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 31</div>
+    <img src="pictures/Picture_001.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 31</div>
+    <img src="pictures/Picture_002.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 31</div>
+    <img src="pictures/Picture_003.jpg" class = "crop" >
+  </div>
+    
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 31</div>
+    <img src="pictures/Picture_004.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 31</div>
+    <img src="pictures/Picture_005.jpg" class = "crop" >
+  </div>
+    
+  <div class="mySlides fade">
+    <div class="numbertext">6 / 31</div>
+    <img src="pictures/Picture_006.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">7 / 31</div>
+    <img src="pictures/Picture_007.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">8 / 31</div>
+    <img src="pictures/Picture_008.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">9 / 31</div>
+    <img src="pictures/Picture_009.jpg" class = "crop" >
+  </div>
+    
+  <div class="mySlides fade">
+    <div class="numbertext">10 / 31</div>
+    <img src="pictures/Picture_010.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">11 / 31</div>
+    <img src="pictures/Picture_011.jpg" class = "crop" >
+  </div>
+    
+  <div class="mySlides fade">
+    <div class="numbertext">12 / 31</div>
+    <img src="pictures/Picture_012.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">13 / 31</div>
+    <img src="pictures/Picture_013.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">14 / 31</div>
+    <img src="pictures/Picture_014.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">15 / 31</div>
+    <img src="pictures/Picture_015.jpg" class = "crop" >
+  </div>
+    
+  <div class="mySlides fade">
+    <div class="numbertext">16 / 31</div>
+    <img src="pictures/Picture_016.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">17 / 31</div>
+    <img src="pictures/Picture_017.jpg" class = "crop" >
+  </div>
+    
+  <div class="mySlides fade">
+    <div class="numbertext">18 / 31</div>
+    <img src="pictures/Picture_018.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">19 / 31</div>
+    <img src="pictures/Picture_019.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">20 / 31</div>
+    <img src="pictures/Picture_020.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">21 / 31</div>
+    <img src="pictures/Picture_003.jpg" class = "crop" >
+  </div>
+    
+  <div class="mySlides fade">
+    <div class="numbertext">22 / 31</div>
+    <img src="pictures/Picture_022.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">23 / 31</div>
+    <img src="pictures/Picture_023.jpg" class = "crop" >
+  </div>
+    
+  <div class="mySlides fade">
+    <div class="numbertext">24 / 31</div>
+    <img src="pictures/Picture_024.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">25 / 31</div>
+    <img src="pictures/Picture_025.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">26 / 31</div>
+    <img src="pictures/Picture_026.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">27 / 31</div>
+    <img src="pictures/Picture_027.jpg" class = "crop" >
+  </div>
+    
+  <div class="mySlides fade">
+    <div class="numbertext">28 / 31</div>
+    <img src="pictures/Picture_028.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">29 / 31</div>
+    <img src="pictures/Picture_029.jpg" class = "crop" >
+  </div>
+    
+  <div class="mySlides fade">
+    <div class="numbertext">30 / 31</div>
+    <img src="pictures/Picture_030.jpg" class = "crop" >
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">31 / 31</div>
+    <img src="pictures/Picture_031.jpg" class = "crop" >
+  </div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
 </div>
 
+<script>
+var slideIndex = 0;
+showSlides();
 
-          
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
 
-<div class="main">
-      
-  <h2>Sidebar</h2>
-  <p>This sidebar is of full height (100%) and always shown.</p>
-  <p>Scroll down the page to see the result.</p>
-    <p>This sidebar is of full height (100%) and always shown.</p>
-  <p>Scroll down the page to see the result.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-</div>
-   <div class="indexnav">.
-  .
-  .
-  .
+  <h2>सल्ि्िि् सतिककचचच</h2>
+  <p>ल्े,िलि्ितत४तडजदडदयो.े
+  द५क४चचीचूीतूचीूचीय।,य,य,ययम.</p>
+  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>
+    <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>  <p>ाररतजीगगूचतकचड़बूि,तिचु,चपिकपिचपचिपतटचितटितटिुीूदजगबदजगबूजबकच,ि,च,लचतकदजजबचीटटबटबतटीबतीूटतष</p>
+
 </div>
 </body>
 </html> 

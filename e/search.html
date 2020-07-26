@@ -7,515 +7,27 @@
 		<script type="text/javascript" src="js/primitives.min.js?5100"></script>
 		<link rel="stylesheet" href="css/main.css" />
 		<script type="text/javascript" src="info/mynodes.json"></script>  
-		<script type="text/javascript">
-		  function clickme(){
-
-            var searchtext = (document.getElementById("searchname").value).trim();
-            var items = mynodes;
-            var myresults = new Array();            
-            var columnsIn = items[0];
-            var searcharray = new Array();
-            var searchcount = 0;
-            searchtext = searchtext.toUpperCase();
-            
-            for(var key in columnsIn){
-                
-                switch (key){
-                    case "id":{
-                        break;
-                    }
-                    case "title":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].title.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~");
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("नाव :" + searchcount);
-                        }                   
-
-                     break;
-                        }
-
-                    case "education":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].education.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].education);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("शिक्षण :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                    case "currentjob":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].currentjob.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].currentjob);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("सध्याचा व्यवसाय :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                    case "bday":{
-                       searchcount = 0; 
-                       
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].bday.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].bday);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("वाढदिवस :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                    case "mday":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].mday.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].mday);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("लग्नाचा वाढदिवस :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                    case "add":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].add.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].add);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("सध्याचा निवास / माहेर / सासर :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                    case "city":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].city.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].city);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("गाव :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-
-                    case "mom":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].mom.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].mom);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("आई / सासु :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                    case "dad":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].dad.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].dad);
-                           searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("वडिल / सासरे :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                  case "mahsaskul":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].mahsaskul.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].mahsaskul);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("कुळ (माहेर / सासर) :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                   case "mahersasar":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].mahersasar.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].mahersasar);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("माहेर / सासर / निवास :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                   case "mama":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].mama.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].mama);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("मामा :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                   case "mamakul":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].mamakul.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].mamakul);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("मामा कुळ:" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                   case "mamalocation":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].mamalocation.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].mamalocation);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("मामा - गाव :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                   case "mavshi":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].mavshi.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].mavshi);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("मावशी :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                   case "mavshikul":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].mavshikul.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].mavshikul);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("मावशी कुळ :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                   case "mavshilocation":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].mavshilocation.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].mavshilocation);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("मावशी - गाव :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-                   case "aatya":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].aatya.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].aatya);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("आत्त्या :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                  case "aatyakul":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].aatyakul.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].aatyakul);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("आत्त्या कुळ :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                   case "aatyalocation":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].aatyalocation.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].aatyalocation);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("आत्त्या - गाव :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                   case "bhau":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].bhau.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].bhau);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("भाऊ :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                   case "bhaulocation":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].bhaulocation.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].bhaulocation);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("भाऊ - गाव :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-
-                   case "bahin":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].bahin.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].bahin);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("बहिण :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-                    case "bahinkul":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].bahinkul.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].bahinkul);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("बहिण कुळ :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-                   case "bahinlocation":{
-                       searchcount = 0; 
-                       for (var i = 0; i < items.length; ++i) {
-                          if (((items[i].bahinlocation.toUpperCase()).search(searchtext)) != -1) {
-                            myresults.push(parseInt(items[i].id,10) + "~ - " + items[i].bahinlocation);
-                            searchcount++;
-                          } 
-                        }
-                        if (searchcount > 0 ){                
-                             searcharray.push("बहिण - गाव :" + searchcount);
-                        }                   
-
-                     break;
-                    }
-                   case 'parents':{
-                        break;
-                    }
-                    case 'spouses':{
-                        break;
-                    }
-                    case 'level':{
-                        break;
-                    }
-                    case 'href':{
-                        break;
-                    }
-                    case 'itemTitleColor':{
-                        break;
-                    }
-                    case 'relativeItem':{
-                        break;
-                    }                            
-                    case 'templateName':{
-                        break;
-                    }
-                    default:                    
-                    {
-                    }                 
-                }
-            } 
-       
-
-            var resultstring = "";
-            var arraystring;
-            var resultarray;
-            var innerloop = 0;
-            var innerto = 0;
-
-            //alert(searcharray.length);
-
-            if (searcharray.length > 0 ){
-
-                for (i=0;i < searcharray.length;i++){
-                    
-                    arraystring = searcharray[i].split(":");
-                    document.getElementById("resultdiv").style.display = "block";
-                    document.getElementById("button"+parseInt(i,10)).style.visibility = "visible";
-
-                    document.getElementById("button"+parseInt(i,10)).innerHTML = "<B>" + arraystring[0] + " - " + arraystring[1] + " शोध परिणाम </B>"
-                    
-                    
-                    innerto = innerloop + parseInt(arraystring[1],10);
-                    resultstring = "";
-                    for (innerarray =innerloop; innerarray  < innerto; innerarray++){
-                        resultarray = myresults[innerarray].split("~");
-
-                        resultstring = resultstring + "<a href='vanshvel.html?id="+ items[resultarray[0]-1].id+"'>" + items[resultarray[0]-1].title + resultarray[1] + "</a><BR>";
-                    }
-                    innerloop= innerto;
-                    document.getElementById("div"+parseInt(i,10)).style.visibility = "visible";
-                    document.getElementById("div"+parseInt(i,10)).innerHTML = resultstring;
-                }
-                
-                for (ivalue=i;ivalue<25;ivalue++) {
-
-                    document.getElementById("button"+ parseInt(ivalue,10)).style.visibility = "hidden";
-                    document.getElementById("div"+ parseInt(ivalue,10)).style.visibility = "hidden";
-                 }
-             } else {
-                    for (ivalue=0;ivalue<25;ivalue++) {
-
-                      document.getElementById("button"+ parseInt(ivalue,10)).style.visibility = "hidden";
-                      document.getElementById("div"+ parseInt(ivalue,10)).style.visibility = "hidden";
-                   }
-
-                    document.getElementById("resultdiv").style.display = "block";
-                    document.getElementById("button0").style.visibility = "visible";
-
-                    document.getElementById("button0").innerHTML = "<B>0 शोध परिणाम </B>"
-
-             }    
-        } 
-
-			function openNav() {
-				document.getElementById("mySidepanel").style.width = "250px";
-			}
-
-			function closeNav() {
-				document.getElementById("mySidepanel").style.width = "0";
-			}
-		</script>		
-
+    <script type="text/javascript" src="js/main.js"></script>
 	</head>
-	<body>
-       <!-- <button onclick="openNav()"style="background: url(img/sayaji.jpg);height: 25px;width: 25px;"></button>   -->
-    <!-- <input type="image" src="img/sayaji.jpg" onclick="openNav()" style="height: 5%;width: 5%;"/>  -->  
-      
-		<div id = "displayme" class="boards">
 
+  <body onload="buildMenu();">
+  	<div id = "displayme" class="boards">
 			<div id = "boardone" class = "board">
         <input type="image" src="img/sayaji.png" alt = "Menu" onclick="openNav()" style="height: 100%;width: 15%;"/>
-				<div id="mySidepanel" class="sidepanel">
-					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-					<a href="index.html">Home</a>
-					<a href="#">आम्ही कोण</a>
-					<a href="vanshvel.html">वंश वटवृक्ष</a>
-					<a href="search.html">शोध - महितीचा</a>
-					<a href="#">संपर्क</a>
-					</div>
-<!-- 				<button class="openbtn" onclick="openNav()">☰</button>  
- -->       
-
+				<div id="mySidebar" class="sidebar">
+        </div>
 			</div>
 
-			<div id = "boardone" class = "board" style="text-align: center; font-size:18px;font-weight: bolder;color:blue;">
+			<div id = "boardtwo" class = "board" style="text-align: center; font-size:18px;font-weight: bolder;color:blue;">
 				शोध <img src = "img/search.png" alt= "शोध" style="width:18px; height:21px;display:inline; margin-left: 0px;margin-right: 0px;"/> महितीचा 
 			</div>
-			<div id = "boardtwo" class = "board" style="text-align: right;">
+	
+  		<div id = "boardthree" class = "board" style="text-align: right;">
 				<input type="text" id="searchname" placeholder="फक्त मराठीतच टाईप करा" style="outline: none; outline-style: none; border-top: none; border-left: none; border-right: none; border-bottom: solid #eeeeee 1px; padding: 1px 1px; font-size: 14px;font-weight: bold;" />
 				<button name ="searchnode" class="mybutton" onclick="clickme()">शोध सयाजींचा</button>				
 			</div>
 		</div>
-		<br><br>
+		
 		<div id = "displayme" class="boards">
 			<div id = "boardone" class = "board">
 			</div>
@@ -523,138 +35,144 @@
 				शोध परिणाम
 			</div>
 			<div id = "boardtwo" class = "board" style="text-align: right;">
-
 			</div>
 		</div>
 		<BR>
 
-<div id = "resultdiv" style="width: 100%; height: 390px;font-size: 14px; display: none;"> 
+    <div id = "resultdiv" style="width: 100%; height: 390px;font-size: 14px; display: none;"> 
+      <button id = "button0" class="accordion">Section 0</button>
+      <div class="panel" id = "div0">
+      </div>
 
+      <button id = "button1" class="accordion">Section 1</button>
+      <div class="panel" id = "div1">
+      </div>
 
-<button id = "button0" class="accordion">Section 0</button>
-<div class="panel" id = "div0">
+      <button id = "button2" class="accordion">Section 2</button>
+      <div class="panel" id = "div2">
+      </div>
 
-</div>
+      <button id = "button3" class="accordion">Section 3</button>
+      <div class="panel" id = "div3">
+      </div>
+      
+      <button id = "button4" class="accordion">Section 4</button>
+      <div class="panel" id = "div4">
+      </div>
 
-<button id = "button1" class="accordion">Section 1</button>
-<div class="panel" id = "div1">
+      <button id = "button5" class="accordion">Section 5</button>
+      <div class="panel" id = "div5">
+      </div>
 
-</div>
+      <button id = "button6" class="accordion">Section 6</button>
+      <div class="panel" id = "div6">
+      </div>
+      
+      <button id = "button7" class="accordion">Section 7</button>
+      <div class="panel" id = "div7">
+      </div>
 
-<button id = "button2" class="accordion">Section 2</button>
-<div class="panel" id = "div2">
+      <button id = "button8" class="accordion">Section 8</button>
+      <div class="panel" id = "div8">
+      </div>
 
-</div>
-<button id = "button3" class="accordion">Section 3</button>
-<div class="panel" id = "div3">
+      <button id = "button9" class="accordion">Section 9</button>
+      <div class="panel" id = "div9">
+      </div>
+      
+      <button id = "button10" class="accordion">Section 10</button>
+      <div class="panel" id = "div10">
+      </div>
 
-</div>
-<button id = "button4" class="accordion">Section 4</button>
-<div class="panel" id = "div4">
+      <button id = "button11" class="accordion">Section 11</button>
+      <div class="panel" id = "div11">
+      </div>
 
-</div>
-<button id = "button5" class="accordion">Section 5</button>
-<div class="panel" id = "div5">
+      <button id = "button12" class="accordion">Section 12</button>
+      <div class="panel" id = "div12">
+      </div>
 
-</div>
-<button id = "button6" class="accordion">Section 6</button>
-<div class="panel" id = "div6">
+      <button id = "button13" class="accordion">Section 13</button>
+      <div class="panel" id = "div13">
+      </div>
 
-</div>
-<button id = "button7" class="accordion">Section 7</button>
-<div class="panel" id = "div7">
+      <button id = "button14" class="accordion">Section 14</button>
+      <div class="panel" id = "div14">
+      </div>
 
-</div>
-<button id = "button8" class="accordion">Section 8</button>
-<div class="panel" id = "div8">
+      <button id = "button15" class="accordion">Section 15</button>
+      <div class="panel" id = "div15">
+      </div>
 
-</div>
-<button id = "button9" class="accordion">Section 9</button>
-<div class="panel" id = "div9">
+      <button id = "button16" class="accordion" >Section 16</button>
+      <div class="panel" id = "div16">
+      </div>
 
-</div>
-<button id = "button10" class="accordion">Section 10</button>
-<div class="panel" id = "div10">
+      <button id = "button17" class="accordion">Section 17</button>
+      <div class="panel" id = "div17">
+      </div>
 
-</div>
-<button id = "button11" class="accordion">Section 11</button>
-<div class="panel" id = "div11">
+      <button id = "button18" class="accordion">Section 18</button>
+      <div class="panel" id = "div18">
+      </div>
 
-</div>
-<button id = "button12" class="accordion">Section 12</button>
-<div class="panel" id = "div12">
+      <button id = "button19" class="accordion">Section 19</button>
+      <div class="panel" id = "div19">
+      </div>
 
-</div>
-<button id = "button13" class="accordion">Section 13</button>
-<div class="panel" id = "div13">
+      <button id = "button20" class="accordion">Section 20</button>
+      <div class="panel" id = "div20">
+      </div>
 
-</div>
-<button id = "button14" class="accordion">Section 14</button>
-<div class="panel" id = "div14">
+      <button id = "button21" class="accordion">Section 21</button>
+      <div class="panel" id = "div21">
+      </div>
 
-</div>
-<button id = "button15" class="accordion">Section 15</button>
-<div class="panel" id = "div15">
+      <button id = "button22" class="accordion">Section 22</button>
+      <div class="panel" id = "div22">
+      </div>
 
-</div>
-<button id = "button16" class="accordion" >Section 16</button>
-<div class="panel" id = "div16">
+      <button id = "button23" class="accordion">Section 23</button>
+      <div class="panel" id = "div23">
+      </div>
 
-</div>
-<button id = "button17" class="accordion">Section 17</button>
-<div class="panel" id = "div17">
+      <button id = "button24" class="accordion">Section 24</button>
+      <div class="panel" id = "div24">
+      </div>
+    </div>
 
-</div>
-<button id = "button18" class="accordion">Section 18</button>
-<div class="panel" id = "div18">
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
 
-</div>
-<button id = "button19" class="accordion">Section 19</button>
-<div class="panel" id = "div19">
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
 
-</div>
-<button id = "button20" class="accordion">Section 20</button>
-<div class="panel" id = "div20">
+    }
+    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
 
-</div>
-<button id = "button21" class="accordion">Section 21</button>
-<div class="panel" id = "div21">
-
-</div>
-<button id = "button22" class="accordion">Section 22</button>
-<div class="panel" id = "div22">
-
-</div>
-<button id = "button23" class="accordion">Section 23</button>
-<div class="panel" id = "div23">
-
-</div>
-<button id = "button24" class="accordion">Section 24</button>
-<div class="panel" id = "div24">
-
-</div>
-</div>
-
-<script>
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
-  });
-
-}
-
-
-
-</script>
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+      } else {
+      dropdownContent.style.display = "block";
+      }
+      });
+    }
+    </script>
 
 	</body>
 </html>
