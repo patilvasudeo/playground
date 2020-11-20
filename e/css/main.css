@@ -3,7 +3,7 @@
 	   display: grid;  
 	    padding: 0;
 	  margin: 1vw;
-	  width: 95vw;
+	  width: 115vw;
 	    grid-template-columns: repeat(auto-fit, 1fr);  
 	    grid-template-rows: 640px;  
 	      border-style: solid;
