@@ -3,9 +3,9 @@
 	   display: grid;  
 	    padding: 0;
 	  margin: 1vw;
-	  width: 75vw;
+	  width: 85vw;
 	    grid-template-columns: repeat(auto-fit, 1fr);  
-	    grid-template-rows: 750px;  
+	    grid-template-rows: 650px;  
 	      border-style: solid;
 	  border-color: red;
 	 align-items: center;
