@@ -5,10 +5,10 @@
 	  margin: 1vw;
 	  /*width: 115vw;*/
 	  width:100%; 	
-	    grid-template-columns: repeat(auto-fit, 1fr);  
+	    /*grid-template-columns: repeat(auto-fit, 1fr);*/  
 	    grid-template-rows: 640px;  
-	      border-style: solid;
-	  border-color: red;
+	      border-style: inset;
+	  border-color: blue;
 	 align-items: center;
 	}
 	.card {
