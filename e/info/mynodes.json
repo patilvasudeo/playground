@@ -37,7 +37,7 @@ var mynodes = [
 			"bahinlocation" : "",
 			"bahinmap" : "", 
 			"birth" : "", 
-			"marriage" : ""
+			"marriage" : "",
             "Old_title": "लहु",
             "parents__001": "0"
         },];
