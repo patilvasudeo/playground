@@ -1,8 +1,8 @@
 var mynodes = [
         {
-                        "id": "1",
+            "id": "1",
             "title": "लहु  पाटील",
-            "parents": "[0]",
+            "parents": [0],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -43,7 +43,7 @@ var mynodes = [
         {
             "id": "2",
             "title": "खंडु लहु  पाटील",
-            "parents": "[1]",
+            "parents": [1],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -84,7 +84,7 @@ var mynodes = [
         {
             "id": "3",
             "title": "पिरता लहु  पाटील",
-            "parents": "[1]",
+            "parents": [1],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -125,7 +125,7 @@ var mynodes = [
         {
             "id": "4",
             "title": "अंकुश लहु  पाटील",
-            "parents": "[1]",
+            "parents": [1],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -166,7 +166,7 @@ var mynodes = [
         {
             "id": "5",
             "title": "निनाबाई  पाटील",
-            "parents": "[1]",
+            "parents": [1],
             "spouses": "",
             "itemTitleColor": "DeepPink",
             "education": "",
@@ -207,7 +207,7 @@ var mynodes = [
         {
             "id": "6",
             "title": "परबत अंकुश  पाटील",
-            "parents": "[4]",
+            "parents": [4],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -248,7 +248,7 @@ var mynodes = [
         {
             "id": "7",
             "title": "आजोबा अंकुश  पाटील",
-            "parents": "[4]",
+            "parents": [4],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -289,7 +289,7 @@ var mynodes = [
         {
             "id": "8",
             "title": "रायाजी परबत  पाटील",
-            "parents": "[6]",
+            "parents": [6],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -330,7 +330,7 @@ var mynodes = [
         {
             "id": "9",
             "title": "सयाजी परबत  पाटील",
-            "parents": "[6]",
+            "parents": [6],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -371,7 +371,7 @@ var mynodes = [
         {
             "id": "10",
             "title": "रंभाजी रायाजी  पाटील",
-            "parents": "[8]",
+            "parents": [8],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -412,7 +412,7 @@ var mynodes = [
         {
             "id": "11",
             "title": "शिवबा सयाजी  पाटील",
-            "parents": "[9]",
+            "parents": [9],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -453,7 +453,7 @@ var mynodes = [
         {
             "id": "12",
             "title": "देवबा सयाजी  पाटील",
-            "parents": "[9]",
+            "parents": [9],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -494,7 +494,7 @@ var mynodes = [
         {
             "id": "13",
             "title": "लहु सयाजी  पाटील",
-            "parents": "[9]",
+            "parents": [9],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -535,7 +535,7 @@ var mynodes = [
         {
             "id": "14",
             "title": "देवाजी रंभाजी  पाटील",
-            "parents": "[10]",
+            "parents": [10],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -576,7 +576,7 @@ var mynodes = [
         {
             "id": "15",
             "title": "रेवाजी रंभाजी  पाटील",
-            "parents": "[10]",
+            "parents": [10],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -617,7 +617,7 @@ var mynodes = [
         {
             "id": "16",
             "title": "खंडु लहु  पाटील",
-            "parents": "[13]",
+            "parents": [13],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -658,7 +658,7 @@ var mynodes = [
         {
             "id": "17",
             "title": "पिरता लहु  पाटील",
-            "parents": "[13]",
+            "parents": [13],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -699,7 +699,7 @@ var mynodes = [
         {
             "id": "18",
             "title": "दिला देवाजी  पाटील",
-            "parents": "[14]",
+            "parents": [14],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -740,7 +740,7 @@ var mynodes = [
         {
             "id": "19",
             "title": "भिला देवाजी  पाटील",
-            "parents": "[14]",
+            "parents": [14],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -781,7 +781,7 @@ var mynodes = [
         {
             "id": "20",
             "title": "वेडु खंडु  पाटील",
-            "parents": "[16]",
+            "parents": [16],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -822,7 +822,7 @@ var mynodes = [
         {
             "id": "21",
             "title": "भिला पिरता  पाटील",
-            "parents": "[17]",
+            "parents": [17],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -863,7 +863,7 @@ var mynodes = [
         {
             "id": "22",
             "title": "सुपडु दिला  पाटील",
-            "parents": "[18]",
+            "parents": [18],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -904,7 +904,7 @@ var mynodes = [
         {
             "id": "23",
             "title": "दिपा दिला  पाटील",
-            "parents": "[18]",
+            "parents": [18],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -945,7 +945,7 @@ var mynodes = [
         {
             "id": "24",
             "title": "आन्ना दिला  पाटील",
-            "parents": "[18]",
+            "parents": [18],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -986,7 +986,7 @@ var mynodes = [
         {
             "id": "25",
             "title": "ऊदा वेडु  पाटील",
-            "parents": "[20]",
+            "parents": [20],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1027,7 +1027,7 @@ var mynodes = [
         {
             "id": "26",
             "title": "पहाडसिंग भिला  पाटील",
-            "parents": "[21]",
+            "parents": [21],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1068,7 +1068,7 @@ var mynodes = [
         {
             "id": "27",
             "title": "रामा सुपडु  पाटील",
-            "parents": "[22]",
+            "parents": [22],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1109,7 +1109,7 @@ var mynodes = [
         {
             "id": "28",
             "title": "कामा सुपडु  पाटील",
-            "parents": "[22]",
+            "parents": [22],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1150,7 +1150,7 @@ var mynodes = [
         {
             "id": "29",
             "title": "रुंजु सुपडु  पाटील",
-            "parents": "[22]",
+            "parents": [22],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1191,7 +1191,7 @@ var mynodes = [
         {
             "id": "30",
             "title": "बापु सुपडु  पाटील",
-            "parents": "[22]",
+            "parents": [22],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1232,7 +1232,7 @@ var mynodes = [
         {
             "id": "31",
             "title": "शामा सुपडु  पाटील",
-            "parents": "[22]",
+            "parents": [22],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1273,7 +1273,7 @@ var mynodes = [
         {
             "id": "32",
             "title": "बाबा सुपडु  पाटील",
-            "parents": "[22]",
+            "parents": [22],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1314,7 +1314,7 @@ var mynodes = [
         {
             "id": "33",
             "title": "पुंजु सुपडु  पाटील",
-            "parents": "[22]",
+            "parents": [22],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1355,7 +1355,7 @@ var mynodes = [
         {
             "id": "34",
             "title": "जयसिंग ऊदा  पाटील",
-            "parents": "[25]",
+            "parents": [25],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1396,7 +1396,7 @@ var mynodes = [
         {
             "id": "35",
             "title": "हरसिंग ऊदा  पाटील",
-            "parents": "[25]",
+            "parents": [25],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1437,7 +1437,7 @@ var mynodes = [
         {
             "id": "36",
             "title": "ऊखा ऊदा  पाटील",
-            "parents": "[25]",
+            "parents": [25],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1478,7 +1478,7 @@ var mynodes = [
         {
             "id": "37",
             "title": "आन्ना पहाडसिंग  पाटील",
-            "parents": "[26]",
+            "parents": [26],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1519,7 +1519,7 @@ var mynodes = [
         {
             "id": "38",
             "title": "गोविंदा पहाडसिंग  पाटील",
-            "parents": "[26]",
+            "parents": [26],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1560,7 +1560,7 @@ var mynodes = [
         {
             "id": "39",
             "title": "दाजीबा रामा  पाटील",
-            "parents": "[27]",
+            "parents": [27],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1601,7 +1601,7 @@ var mynodes = [
         {
             "id": "40",
             "title": "विठोबा रामा  पाटील",
-            "parents": "[27]",
+            "parents": [27],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1642,7 +1642,7 @@ var mynodes = [
         {
             "id": "41",
             "title": "धनजी पुंजु  पाटील",
-            "parents": "[33]",
+            "parents": [33],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1683,7 +1683,7 @@ var mynodes = [
         {
             "id": "42",
             "title": "भिका बापु  पाटील",
-            "parents": "[30]",
+            "parents": [30],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1724,7 +1724,7 @@ var mynodes = [
         {
             "id": "43",
             "title": "महादु आन्ना  पाटील",
-            "parents": "[37]",
+            "parents": [37],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1765,7 +1765,7 @@ var mynodes = [
         {
             "id": "44",
             "title": "सोनजी दाजीबा  पाटील",
-            "parents": "[39]",
+            "parents": [39],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -1806,8 +1806,8 @@ var mynodes = [
         {
             "id": "45",
             "title": "हरी विठोबा  पाटील",
-            "parents": "[40]",
-            "spouses": "[46]",
+            "parents": [40],
+            "spouses": [46],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -1888,8 +1888,8 @@ var mynodes = [
         {
             "id": "47",
             "title": "शामराव विठोबा  पाटील",
-            "parents": "[40]",
-            "spouses": "[48]",
+            "parents": [40],
+            "spouses": [48],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -1970,8 +1970,8 @@ var mynodes = [
         {
             "id": "49",
             "title": "झिपरू विठोबा  पाटील",
-            "parents": "[40]",
-            "spouses": "[50]",
+            "parents": [40],
+            "spouses": [50],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -2052,8 +2052,8 @@ var mynodes = [
         {
             "id": "51",
             "title": "ऐकोबा विठोबा  पाटील",
-            "parents": "[40]",
-            "spouses": "[52]",
+            "parents": [40],
+            "spouses": [52],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -2134,7 +2134,7 @@ var mynodes = [
         {
             "id": "53",
             "title": "झेंडा भिका  पाटील",
-            "parents": "[42]",
+            "parents": [42],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -2175,7 +2175,7 @@ var mynodes = [
         {
             "id": "54",
             "title": "दगडु भिका  पाटील",
-            "parents": "[42]",
+            "parents": [42],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -2216,7 +2216,7 @@ var mynodes = [
         {
             "id": "55",
             "title": "रामचंद्र भिका  पाटील",
-            "parents": "[42]",
+            "parents": [42],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -2257,7 +2257,7 @@ var mynodes = [
         {
             "id": "56",
             "title": "देवचंद भिका  पाटील",
-            "parents": "[42]",
+            "parents": [42],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -2298,8 +2298,8 @@ var mynodes = [
         {
             "id": "57",
             "title": "सांडु धनजी  पाटील",
-            "parents": "[41]",
-            "spouses": "[58]",
+            "parents": [41],
+            "spouses": [58],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -2380,8 +2380,8 @@ var mynodes = [
         {
             "id": "59",
             "title": "पांडु धनजी  पाटील",
-            "parents": "[41]",
-            "spouses": "[60]",
+            "parents": [41],
+            "spouses": [60],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -2462,8 +2462,8 @@ var mynodes = [
         {
             "id": "61",
             "title": "शंकर धनजी  पाटील",
-            "parents": "[41]",
-            "spouses": "[62]",
+            "parents": [41],
+            "spouses": [62],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -2544,8 +2544,8 @@ var mynodes = [
         {
             "id": "63",
             "title": "राजाराम धनजी  पाटील",
-            "parents": "[41]",
-            "spouses": "[64]",
+            "parents": [41],
+            "spouses": [64],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -2626,8 +2626,8 @@ var mynodes = [
         {
             "id": "65",
             "title": "लोटन शामराव  पाटील",
-            "parents": "[47,48]",
-            "spouses": "[66]",
+            "parents": [47,48],
+            "spouses": [66],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -2708,8 +2708,8 @@ var mynodes = [
         {
             "id": "67",
             "title": "गोविंदा झिपरू  पाटील",
-            "parents": "[49,50]",
-            "spouses": "[68]",
+            "parents": [49,50],
+            "spouses": [68],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -2790,8 +2790,8 @@ var mynodes = [
         {
             "id": "69",
             "title": "जगन झिपरू  पाटील",
-            "parents": "[49,50]",
-            "spouses": "[70]",
+            "parents": [49,50],
+            "spouses": [70],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -2872,8 +2872,8 @@ var mynodes = [
         {
             "id": "71",
             "title": "दुर्गाबाई दयाराम  पाटील",
-            "parents": "[49,50]",
-            "spouses": "[72]",
+            "parents": [49,50],
+            "spouses": [72],
             "itemTitleColor": "Green",
             "education": "",
             "currentjob": "",
@@ -2954,8 +2954,8 @@ var mynodes = [
         {
             "id": "73",
             "title": "सुक्राम झिपरू  पाटील",
-            "parents": "[49,50]",
-            "spouses": "[74]",
+            "parents": [49,50],
+            "spouses": [74],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -3036,8 +3036,8 @@ var mynodes = [
         {
             "id": "75",
             "title": "चिंधाबाई शामराव  पाटील",
-            "parents": "[51,52]",
-            "spouses": "[76]",
+            "parents": [51,52],
+            "spouses": [76],
             "itemTitleColor": "Green",
             "education": "",
             "currentjob": "",
@@ -3118,8 +3118,8 @@ var mynodes = [
         {
             "id": "77",
             "title": "निंबाजी ऐकोबा  पाटील",
-            "parents": "[51,52]",
-            "spouses": "[78]",
+            "parents": [51,52],
+            "spouses": [78],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -3200,8 +3200,8 @@ var mynodes = [
         {
             "id": "79",
             "title": "शांताबाई आत्माराम  पाटील",
-            "parents": "[51,52]",
-            "spouses": "[80]",
+            "parents": [51,52],
+            "spouses": [80],
             "itemTitleColor": "Green",
             "education": "",
             "currentjob": "",
@@ -3282,7 +3282,7 @@ var mynodes = [
         {
             "id": "81",
             "title": "संतोष दगडु  पाटील",
-            "parents": "[54]",
+            "parents": [54],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -3323,8 +3323,8 @@ var mynodes = [
         {
             "id": "82",
             "title": "मीराबाई वामन  पाटील",
-            "parents": "[57,58]",
-            "spouses": "[83]",
+            "parents": [57,58],
+            "spouses": [83],
             "itemTitleColor": "Green",
             "education": "",
             "currentjob": "",
@@ -3405,8 +3405,8 @@ var mynodes = [
         {
             "id": "84",
             "title": "रामराव सांडु  पाटील",
-            "parents": "[57,58]",
-            "spouses": "[85]",
+            "parents": [57,58],
+            "spouses": [85],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -3487,8 +3487,8 @@ var mynodes = [
         {
             "id": "86",
             "title": "दशरथ पांडु  पाटील",
-            "parents": "[59,60]",
-            "spouses": "[87]",
+            "parents": [59,60],
+            "spouses": [87],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -3569,8 +3569,8 @@ var mynodes = [
         {
             "id": "88",
             "title": "श्रीराम पांडु  पाटील",
-            "parents": "[59,60]",
-            "spouses": "[89]",
+            "parents": [59,60],
+            "spouses": [89],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -3651,8 +3651,8 @@ var mynodes = [
         {
             "id": "90",
             "title": "प्रतिभा पोपटराव  पाटील",
-            "parents": "[59,60]",
-            "spouses": "[91]",
+            "parents": [59,60],
+            "spouses": [91],
             "itemTitleColor": "Green",
             "education": "",
             "currentjob": "",
@@ -3733,8 +3733,8 @@ var mynodes = [
         {
             "id": "92",
             "title": "पितांबर पांडु  पाटील",
-            "parents": "[59,60]",
-            "spouses": "[93]",
+            "parents": [59,60],
+            "spouses": [93],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -3815,8 +3815,8 @@ var mynodes = [
         {
             "id": "94",
             "title": "सावीत्री सावीत्री  पाटील",
-            "parents": "[59,60]",
-            "spouses": "[95]",
+            "parents": [59,60],
+            "spouses": [95],
             "itemTitleColor": "Green",
             "education": "",
             "currentjob": "",
@@ -3897,8 +3897,8 @@ var mynodes = [
         {
             "id": "96",
             "title": "फकिरा शंकर  पाटील",
-            "parents": "[61,62]",
-            "spouses": "[97]",
+            "parents": [61,62],
+            "spouses": [97],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -3979,8 +3979,8 @@ var mynodes = [
         {
             "id": "98",
             "title": "Aatya1 Aatya1  पाटील",
-            "parents": "[61,62]",
-            "spouses": "[99]",
+            "parents": [61,62],
+            "spouses": [99],
             "itemTitleColor": "Green",
             "education": "",
             "currentjob": "",
@@ -4061,8 +4061,8 @@ var mynodes = [
         {
             "id": "102",
             "title": "जिजाबाई गणपतराव  पाटील",
-            "parents": "[63,64]",
-            "spouses": "[103]",
+            "parents": [63,64],
+            "spouses": [103],
             "itemTitleColor": "Green",
             "education": "",
             "currentjob": "",
@@ -4143,8 +4143,8 @@ var mynodes = [
         {
             "id": "104",
             "title": "भिलाबाई हिलाल  पाटील",
-            "parents": "[63,64]",
-            "spouses": "[105]",
+            "parents": [63,64],
+            "spouses": [105],
             "itemTitleColor": "Green",
             "education": "",
             "currentjob": "",
@@ -4225,8 +4225,8 @@ var mynodes = [
         {
             "id": "106",
             "title": "विश्वासराव राजाराम  पाटील",
-            "parents": "[63,64]",
-            "spouses": "[107]",
+            "parents": [63,64],
+            "spouses": [107],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -4307,8 +4307,8 @@ var mynodes = [
         {
             "id": "108",
             "title": "यशवंत राजाराम  पाटील",
-            "parents": "[63,64]",
-            "spouses": "[109]",
+            "parents": [63,64],
+            "spouses": [109],
             "itemTitleColor": "Blue",
             "education": "",
             "currentjob": "",
@@ -4384,5 +4384,6 @@ var mynodes = [
             "bahinlocation": "",
             "bahinmap": "",
             "birth": "",
-            "marriage": ""            }
+            "marriage": ""
+        }
         ,]
