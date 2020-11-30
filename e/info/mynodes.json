@@ -2,7 +2,7 @@ var mynodes = [
         {
             "id": "1",
             "title": "लहु  पाटील",
-            "parents": "[0]",
+            "parents": [0],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -43,7 +43,7 @@ var mynodes = [
         {
             "id": "2",
             "title": "खंडु लहु  पाटील",
-            "parents": "[1]",
+            "parents": [1],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -84,7 +84,7 @@ var mynodes = [
         {
             "id": "3",
             "title": "पिरता लहु  पाटील",
-            "parents": "[1]",
+            "parents": [1],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -125,7 +125,7 @@ var mynodes = [
         {
             "id": "4",
             "title": "अंकुश लहु  पाटील",
-            "parents": "[1]",
+            "parents": [1],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
@@ -166,7 +166,7 @@ var mynodes = [
         {
             "id": "5",
             "title": "निनाबाई  पाटील",
-            "parents": "[1]",
+            "parents": [1],
             "spouses": "",
             "itemTitleColor": "DeepPink",
             "education": "",
@@ -207,7 +207,7 @@ var mynodes = [
         {
             "id": "6",
             "title": "परबत अंकुश  पाटील",
-            "parents": "[4]",
+            "parents": [4],
             "spouses": "",
             "itemTitleColor": "Blue",
             "education": "",
